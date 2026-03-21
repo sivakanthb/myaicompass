@@ -416,5 +416,181 @@
     "personas": ["Product Owner", "Stakeholder", "Marketing", "Executive", "Educator", "Agile Coach"],
     "maturity": 4,
     "url": "https://www.promptingguide.ai"
+  },
+  {
+    "name": "Vercel",
+    "category": "Developer Tools",
+    "description": "Cloud platform for deploying web applications instantly — free for personal projects with automatic HTTPS, CDN, and preview URLs.",
+    "type": "Platform",
+    "useCase": "Deployment",
+    "purpose": "Deployment & Hosting",
+    "personas": ["Developer", "DevOps"],
+    "maturity": 5,
+    "url": "https://vercel.com"
+  },
+  {
+    "name": "Windsurf (Codeium)",
+    "category": "Developer Tools",
+    "description": "AI-powered code editor with free tier — offers code completion, chat, and agent capabilities for building software faster.",
+    "type": "Tool",
+    "useCase": "Development",
+    "purpose": "Code Generation",
+    "personas": ["Developer", "Architect"],
+    "maturity": 4,
+    "url": "https://codeium.com/windsurf"
+  },
+  {
+    "name": "Ollama",
+    "category": "LLMs & Models",
+    "description": "Run open-source LLMs locally on your machine — Llama, Mistral, Phi, and more. No cloud, no API key, full privacy.",
+    "type": "Tool",
+    "useCase": "Development",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Architect", "Researcher", "Data Engineer"],
+    "maturity": 4,
+    "url": "https://ollama.com"
+  },
+  {
+    "name": "v0 by Vercel",
+    "category": "Developer Tools",
+    "description": "AI-powered UI generator — describe a component or page in natural language and get production-ready React/Tailwind code instantly.",
+    "type": "Tool",
+    "useCase": "Design",
+    "purpose": "Code Generation",
+    "personas": ["Developer", "Designer", "Product Owner"],
+    "maturity": 3,
+    "url": "https://v0.dev"
+  },
+  {
+    "name": "Replit",
+    "category": "Developer Tools",
+    "description": "Cloud-based IDE with built-in AI assistant — write, run, and deploy code from your browser with AI help at every step.",
+    "type": "Platform",
+    "useCase": "Development",
+    "purpose": "Code Generation",
+    "personas": ["Developer", "Educator"],
+    "maturity": 4,
+    "url": "https://replit.com"
+  },
+  {
+    "name": "Bolt.new",
+    "category": "Developer Tools",
+    "description": "AI-powered full-stack app builder — describe your app idea and get a working prototype deployed in minutes, entirely in the browser.",
+    "type": "Tool",
+    "useCase": "Development",
+    "purpose": "App Building",
+    "personas": ["Developer", "Product Owner", "Designer"],
+    "maturity": 3,
+    "url": "https://bolt.new"
+  },
+  {
+    "name": "Streamlit",
+    "category": "Developer Tools",
+    "description": "Python framework for building interactive data apps and AI demos in minutes — the go-to tool for data scientists to share their work.",
+    "type": "Framework",
+    "useCase": "Data",
+    "purpose": "App Building",
+    "personas": ["Developer", "Data Engineer", "Researcher"],
+    "maturity": 5,
+    "url": "https://streamlit.io"
+  },
+  {
+    "name": "Gradio",
+    "category": "Developer Tools",
+    "description": "Python library for building ML demos and web UIs with just a few lines of code — widely used on Hugging Face Spaces.",
+    "type": "Framework",
+    "useCase": "Data",
+    "purpose": "App Building",
+    "personas": ["Developer", "Data Engineer", "Researcher"],
+    "maturity": 5,
+    "url": "https://gradio.app"
+  },
+  {
+    "name": "AWS Bedrock",
+    "category": "AI Platforms",
+    "description": "Amazon's managed service for accessing foundation models (Claude, Llama, Titan) via API — with enterprise security, fine-tuning, and RAG built in.",
+    "type": "Platform",
+    "useCase": "Enterprise",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Architect", "DevOps", "Executive"],
+    "maturity": 4,
+    "url": "https://aws.amazon.com/bedrock"
+  },
+  {
+    "name": "Google Vertex AI",
+    "category": "AI Platforms",
+    "description": "Google Cloud's unified AI platform for building, deploying, and scaling ML and generative AI applications with Gemini models.",
+    "type": "Platform",
+    "useCase": "Enterprise",
+    "purpose": "Model Training",
+    "personas": ["Developer", "Architect", "Data Engineer", "DevOps"],
+    "maturity": 4,
+    "url": "https://cloud.google.com/vertex-ai"
+  },
+  {
+    "name": "Azure AI Studio",
+    "category": "AI Platforms",
+    "description": "Microsoft's unified platform for building AI applications — access OpenAI models, deploy RAG pipelines, and manage AI projects with enterprise governance.",
+    "type": "Platform",
+    "useCase": "Enterprise",
+    "purpose": "App Building",
+    "personas": ["Developer", "Architect", "DevOps", "Executive"],
+    "maturity": 4,
+    "url": "https://ai.azure.com"
+  },
+  {
+    "name": "Runway",
+    "category": "Creative AI",
+    "description": "AI-powered video generation and editing — create, extend, and transform video with text prompts. Used by filmmakers and content creators.",
+    "type": "Tool",
+    "useCase": "Creative",
+    "purpose": "Content Creation",
+    "personas": ["Designer", "Marketing"],
+    "maturity": 4,
+    "url": "https://runwayml.com"
+  },
+  {
+    "name": "Suno",
+    "category": "Creative AI",
+    "description": "AI music generator — create full songs with vocals, instruments, and lyrics from a text prompt. No musical experience needed.",
+    "type": "Tool",
+    "useCase": "Creative",
+    "purpose": "Content Creation",
+    "personas": ["Designer", "Marketing", "Educator"],
+    "maturity": 3,
+    "url": "https://suno.com"
+  },
+  {
+    "name": "n8n",
+    "category": "Automation & Agents",
+    "description": "Open-source workflow automation platform with AI capabilities — connect apps, APIs, and AI models into automated workflows with a visual builder.",
+    "type": "Platform",
+    "useCase": "Automation",
+    "purpose": "Workflow Automation",
+    "personas": ["Developer", "DevOps", "Product Owner"],
+    "maturity": 4,
+    "url": "https://n8n.io"
+  },
+  {
+    "name": "LM Studio",
+    "category": "LLMs & Models",
+    "description": "Desktop app for running open-source LLMs locally with a ChatGPT-like interface — discover, download, and chat with models offline.",
+    "type": "Tool",
+    "useCase": "Development",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Researcher"],
+    "maturity": 3,
+    "url": "https://lmstudio.ai"
+  },
+  {
+    "name": "Perplexity Pages",
+    "category": "Knowledge & Search",
+    "description": "AI-powered research and publishing tool — create shareable, well-sourced articles on any topic with AI-assisted research and writing.",
+    "type": "Tool",
+    "useCase": "Productivity",
+    "purpose": "Research & Analysis",
+    "personas": ["Researcher", "Educator", "Marketing", "Executive"],
+    "maturity": 3,
+    "url": "https://www.perplexity.ai/pages"
   }
 ]

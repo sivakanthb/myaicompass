@@ -45,5 +45,22 @@
   {"term":"Edge AI","definition":"Running AI models locally on devices (phones, sensors, IoT) rather than in the cloud — enabling faster, private, offline inference.","category":"Architecture"},
   {"term":"AI-First","definition":"An organizational mindset where AI is a core capability woven into every process, not just an add-on — the future of software delivery.","category":"Strategy"},
   {"term":"Responsible AI","definition":"Developing and deploying AI systems that are fair, transparent, accountable, and aligned with human values.","category":"Safety"},
-  {"term":"Prompt Injection","definition":"A security vulnerability where malicious inputs trick an AI into ignoring its instructions or leaking sensitive information.","category":"Safety"}
+  {"term":"Prompt Injection","definition":"A security vulnerability where malicious inputs trick an AI into ignoring its instructions or leaking sensitive information.","category":"Safety"},
+  {"term":"Foundation Model","definition":"A large AI model pre-trained on broad data that serves as a base for many downstream tasks. GPT-4, Claude, Gemini, and Llama are all foundation models.","category":"Models"},
+  {"term":"Grounding","definition":"The technique of connecting an AI model's output to verified, factual sources — reducing hallucinations by anchoring responses in real data.","category":"Architecture"},
+  {"term":"Tokenization","definition":"The process of breaking text into tokens (words, subwords, or characters) that a language model can process. Different models use different tokenizers.","category":"Models"},
+  {"term":"System Prompt","definition":"Hidden instructions given to an AI model that define its personality, rules, and behavior — set by the developer, not visible to the end user.","category":"Prompting"},
+  {"term":"Prompt Chaining","definition":"Breaking a complex task into a series of sequential prompts, where the output of one becomes the input of the next — enabling multi-step reasoning.","category":"Prompting"},
+  {"term":"Orchestration","definition":"The process of coordinating multiple AI components — models, tools, memory, and APIs — into a cohesive workflow or pipeline.","category":"Architecture"},
+  {"term":"Knowledge Graph","definition":"A structured representation of real-world entities and their relationships, used to give AI systems organized, queryable knowledge.","category":"Architecture"},
+  {"term":"Benchmark","definition":"A standardized test or dataset used to evaluate and compare AI model performance — e.g., MMLU, HumanEval, GSM8K.","category":"Operations"},
+  {"term":"Parameter","definition":"A learnable weight in a neural network. Model size is often expressed in parameters — GPT-4 has trillions, while smaller models have billions.","category":"Models"},
+  {"term":"GPU / TPU","definition":"Specialized processors optimized for AI workloads. GPUs (NVIDIA) and TPUs (Google) accelerate model training and inference by orders of magnitude over CPUs.","category":"Architecture"},
+  {"term":"Vibe Coding","definition":"A development approach where you describe what you want in natural language and an AI assistant writes the code — making software creation accessible to non-developers.","category":"Tools"},
+  {"term":"MCP (Model Context Protocol)","definition":"An open standard that lets AI assistants connect to external tools and data sources through a universal interface — like USB-C for AI.","category":"Agents"},
+  {"term":"Computer Vision","definition":"The field of AI that enables machines to interpret and understand visual information from images and video — used in autonomous vehicles, medical imaging, and more.","category":"Fundamentals"},
+  {"term":"Annotation / Labeling","definition":"The process of tagging training data with correct labels so supervised AI models can learn from examples — a critical step in model development.","category":"Training"},
+  {"term":"Data Pipeline","definition":"An automated workflow that collects, processes, transforms, and feeds data into AI models for training or inference.","category":"Operations"},
+  {"term":"AI Alignment","definition":"The research field focused on ensuring AI systems reliably act in accordance with human intentions and values — especially critical as models become more capable.","category":"Safety"},
+  {"term":"Autonomous AI","definition":"AI systems that can operate independently for extended periods, making decisions and taking actions without human approval at each step.","category":"Agents"}
 ]

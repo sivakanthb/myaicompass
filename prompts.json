@@ -124,5 +124,35 @@
     "prompt": "Turn this AI product idea into an actionable MVP specification:\n\n**Idea**: [describe the AI-powered product/feature]\n\n**Generate:**\n1. **Problem statement**: What pain point does this solve? For whom?\n2. **Core AI capability**: What model/technique powers it? (LLM, vision, embeddings, etc.)\n3. **MVP scope**: What's the smallest version that delivers value? (3-5 features max)\n4. **Architecture sketch**: Key components (frontend, API, model, data store, vector DB?)\n5. **Data requirements**: What data is needed? Is it available?\n6. **Risk assessment**: Top 3 risks (hallucination, latency, cost, privacy)\n7. **Success metrics**: How do you measure if it's working?\n8. **Build vs buy**: What to build custom vs use existing services?\n\nBe specific and opinionated — not generic.",
     "role": "Product Manager",
     "category": "Strategy"
+  },
+  {
+    "title": "Code Generation — Feature Builder",
+    "prompt": "I need you to implement this feature:\n\n**Language/Framework**: [e.g., Python/FastAPI, TypeScript/React]\n**Feature**: [describe what you want built]\n**Context**: [describe the existing codebase structure, key files, patterns used]\n\n**Requirements:**\n1. Follow existing code conventions and patterns\n2. Include error handling for edge cases\n3. Add type annotations / interfaces\n4. Write it so it's testable (dependency injection, pure functions where possible)\n\n**Output format:**\n- Show each file separately with its path\n- Explain any design decisions\n- List any new dependencies needed\n- Note any migrations or config changes required",
+    "role": "Developer",
+    "category": "Code Generation"
+  },
+  {
+    "title": "Technical Blog Post Writer",
+    "prompt": "Write a technical blog post on this topic:\n\n**Topic**: [your topic]\n**Audience**: [developers / tech leads / non-technical stakeholders]\n**Length**: [short (500w) / medium (1000w) / long (2000w)]\n**Tone**: [tutorial / opinion / explainer / comparison]\n\n**Structure:**\n1. Hook — start with a relatable problem or surprising fact\n2. Context — why this matters now\n3. Core content — explain with concrete examples and code snippets where relevant\n4. Practical takeaways — what should the reader do next?\n5. Conclusion — one-sentence summary\n\nAvoid jargon unless writing for expert developers. Use analogies to explain complex concepts. Include at least one real-world example.",
+    "role": "Content Creator",
+    "category": "Content Writing"
+  },
+  {
+    "title": "Data Analysis — Insight Extractor",
+    "prompt": "Analyze this dataset and extract actionable insights:\n\n**Data description**: [describe the data — columns, rows, source, time range]\n**Sample data**: [paste a few rows or describe the shape]\n**Business context**: [what decisions will this analysis inform?]\n\n**Perform:**\n1. **Summary statistics**: Key distributions, averages, outliers\n2. **Trends**: Time-based patterns, growth rates, seasonality\n3. **Segments**: Natural groupings or clusters in the data\n4. **Anomalies**: Anything unexpected that needs investigation\n5. **Correlations**: Relationships between variables\n6. **Recommendations**: 3 specific actions based on the findings\n\nPresent findings with clear headers. Use bullet points for quick scanning. Suggest visualizations that would best communicate each insight.",
+    "role": "Data Analyst",
+    "category": "Data Analysis"
+  },
+  {
+    "title": "Executive AI Strategy Briefing",
+    "prompt": "Create an executive briefing on AI strategy for my organization:\n\n**Industry**: [your industry]\n**Company size**: [startup / mid-market / enterprise]\n**Current AI maturity**: [none / experimenting / scaling / optimizing]\n**Budget range**: [low / medium / high]\n\n**Cover:**\n1. **Quick wins** (0-3 months): AI tools teams can adopt this week\n2. **Strategic initiatives** (3-12 months): Projects that need investment\n3. **Competitive landscape**: What competitors are doing with AI\n4. **Risk assessment**: Security, compliance, workforce impact\n5. **ROI framework**: How to measure AI investment returns\n6. **Talent strategy**: Build vs hire vs upskill\n\nKeep it concise — executives skim. Use bullet points, bold key numbers, and end each section with a clear recommendation.",
+    "role": "Executive",
+    "category": "Business"
+  },
+  {
+    "title": "AI-Powered Lesson Plan Generator",
+    "prompt": "Create a lesson plan that uses AI tools as part of the learning experience:\n\n**Subject**: [topic to teach]\n**Audience**: [grade level / professional training / self-learners]\n**Duration**: [30 min / 1 hour / multi-session]\n**AI tools available**: [ChatGPT, Copilot, image generators, etc.]\n\n**Generate:**\n1. **Learning objectives**: What students will know/do after the lesson\n2. **Warm-up** (5 min): Engaging hook question or demo\n3. **Instruction** (15 min): Core concepts with AI-assisted examples\n4. **Hands-on activity** (20 min): Students use AI tools to complete a task\n5. **Reflection** (10 min): Critical thinking — what did AI get right/wrong?\n6. **Assessment**: How to evaluate learning (not just AI output quality)\n\nInclude specific AI prompts students should try, and questions that develop critical thinking about AI outputs.",
+    "role": "Educator",
+    "category": "Teaching"
   }
 ]

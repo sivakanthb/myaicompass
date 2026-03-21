@@ -166,5 +166,23 @@
     "category": "Getting Started",
     "question": "How do I move a repository from one GitHub account to another?",
     "answer": "Two approaches: (1) Transfer — Go to repo Settings > Transfer, enter the new owner's account (both accounts must be accessible). This preserves stars, issues, and history. (2) Clone and re-push — Clone the repo locally, create a new empty repo on the target account, change the remote URL, and push. This copies all code and history but doesn't transfer issues/stars. The second approach is simpler when accounts aren't in the same org."
+  },
+  {
+    "id": 29,
+    "category": "AI Tools & Ecosystem",
+    "question": "How much does it cost to use AI tools like ChatGPT, Copilot, or Claude?",
+    "answer": "Most AI tools offer free tiers with limits: ChatGPT Free (GPT-4o mini), Claude Free (usage caps), Copilot Free (2000 completions/month). Paid tiers: ChatGPT Plus ($20/mo), Claude Pro ($20/mo), GitHub Copilot Pro ($10/mo). For API usage, you pay per token — GPT-4o costs ~$2.50/1M input tokens, Claude 3.5 Sonnet ~$3/1M input tokens. For most individual developers, the free tiers are enough to get started. Enterprise plans add security, admin controls, and higher limits."
+  },
+  {
+    "id": 30,
+    "category": "AI Fundamentals",
+    "question": "Is AI going to replace software developers?",
+    "answer": "No — but it will change what developers do. AI is excellent at generating boilerplate code, writing tests, and automating repetitive tasks. But it still struggles with complex system design, understanding business context, debugging subtle issues, and making architectural tradeoffs. Think of AI as a 10x multiplier for developer productivity, not a replacement. Developers who learn to work with AI tools will be far more productive than those who don't — and far more valuable than AI working alone."
+  },
+  {
+    "id": 31,
+    "category": "Vibe Coding & Setup",
+    "question": "What's the difference between running AI locally vs in the cloud?",
+    "answer": "Cloud AI (ChatGPT, Claude API) runs on remote servers — easy to use, no hardware needed, but requires internet and sends data to a third party. Local AI (Ollama, LM Studio) runs models on your own machine — full privacy, works offline, but needs a decent GPU (8GB+ VRAM) and models are usually smaller/less capable than cloud versions. Use cloud for best quality and convenience; use local for privacy-sensitive work, offline access, or experimentation. Many developers use both depending on the task."
   }
 ]

@@ -328,5 +328,60 @@
     "duration": "20 hours",
     "topic": "Foundations",
     "free": true
+  },
+  {
+    "title": "Vibe Coding: Build Apps with AI",
+    "provider": "YouTube (Various Creators)",
+    "description": "Learn the vibe coding approach — use AI tools like Cursor, Bolt, and Replit to build working apps by describing what you want in natural language.",
+    "url": "https://www.youtube.com/results?search_query=vibe+coding+tutorial",
+    "format": "Video Series",
+    "level": "Beginner",
+    "duration": "5 hours",
+    "topic": "Vibe Coding",
+    "free": true
+  },
+  {
+    "title": "AI for Everyone",
+    "provider": "Coursera (Andrew Ng)",
+    "description": "Non-technical introduction to AI for business leaders — understand what AI can and cannot do, how to build an AI strategy, and navigate ethical concerns.",
+    "url": "https://www.coursera.org/learn/ai-for-everyone",
+    "format": "Course",
+    "level": "Beginner",
+    "duration": "6 hours",
+    "topic": "AI for Leaders",
+    "free": true
+  },
+  {
+    "title": "CS231n — Convolutional Neural Networks for Visual Recognition",
+    "provider": "Stanford (YouTube)",
+    "description": "Deep dive into computer vision — image classification, object detection, image generation, and neural network architectures for visual tasks.",
+    "url": "https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv",
+    "format": "Video Series",
+    "level": "Advanced",
+    "duration": "20 hours",
+    "topic": "Computer Vision",
+    "free": true
+  },
+  {
+    "title": "Hugging Face Audio Course",
+    "provider": "Hugging Face",
+    "description": "Learn to work with audio data using transformers — speech recognition, text-to-speech, audio classification, and voice AI applications.",
+    "url": "https://huggingface.co/learn/audio-course",
+    "format": "Course",
+    "level": "Intermediate",
+    "duration": "10 hours",
+    "topic": "Voice & Audio AI",
+    "free": true
+  },
+  {
+    "title": "Generative AI for Enterprise — IBM",
+    "provider": "Coursera (IBM)",
+    "description": "Enterprise perspective on generative AI — governance, scaling AI across teams, responsible implementation, and building business value.",
+    "url": "https://www.coursera.org/learn/generative-ai-for-enterprise",
+    "format": "Course",
+    "level": "Intermediate",
+    "duration": "8 hours",
+    "topic": "AI for Enterprise",
+    "free": true
   }
 ]
