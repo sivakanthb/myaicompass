@@ -1,5 +1,6 @@
 [
   {"term":"Artificial Intelligence (AI)","definition":"The simulation of human intelligence by machines — enabling systems to learn, reason, and make decisions.","category":"Fundamentals"},
+  {"term":"Artificial General Intelligence (AGI)","definition":"A hypothetical AI system capable of understanding, learning, and applying knowledge across any domain — matching or exceeding human cognitive abilities. Unlike today's narrow AI, AGI would reason broadly and adapt to entirely new situations. AGI does not yet exist.","category":"Fundamentals"},
   {"term":"Machine Learning (ML)","definition":"A subset of AI where systems learn patterns from data and improve over time without being explicitly programmed.","category":"Fundamentals"},
   {"term":"Deep Learning","definition":"A type of machine learning using neural networks with many layers to model complex patterns in data (images, text, audio).","category":"Fundamentals"},
   {"term":"Large Language Model (LLM)","definition":"AI models trained on massive text datasets that can generate, summarize, translate, and reason about human language. Examples: GPT-4, Claude, Gemini.","category":"Models"},

@@ -2,241 +2,169 @@
   {
     "id": 1,
     "category": "AI Fundamentals",
-    "question": "What is Artificial Intelligence (AI)?",
-    "answer": "AI is the simulation of human intelligence by machines — systems that can learn from data, recognise patterns, make decisions, and generate content. Modern AI is powered by neural networks trained on massive datasets, enabling capabilities like language understanding, image recognition, and code generation."
-  },
-  {
-    "id": 2,
-    "category": "AI Fundamentals",
-    "question": "What is AGI (Artificial General Intelligence)?",
-    "answer": "AGI refers to a hypothetical AI system that can understand, learn, and apply knowledge across any domain — matching or exceeding human cognitive abilities. Unlike today's 'narrow AI' (which excels at specific tasks), AGI would reason broadly, transfer knowledge between domains, and adapt to entirely new situations without retraining. AGI does not yet exist."
-  },
-  {
-    "id": 3,
-    "category": "AI Fundamentals",
-    "question": "What is an AI Agent?",
-    "answer": "An AI agent is a software system that perceives its environment, makes decisions, and takes actions autonomously to achieve a goal. It goes beyond simple chatbots by using tools, calling APIs, browsing the web, writing code, and reasoning through multi-step tasks — often with minimal human intervention."
-  },
-  {
-    "id": 4,
-    "category": "AI Fundamentals",
-    "question": "What is Agentic AI?",
-    "answer": "Agentic AI describes AI systems that act with autonomy — planning, reasoning, using tools, and executing multi-step workflows independently. Instead of just answering questions (like a chatbot), agentic AI takes initiative: it can research a topic, write code, test it, fix errors, and deploy — all with a single prompt."
-  },
-  {
-    "id": 5,
-    "category": "AI Fundamentals",
     "question": "What is the difference between AI and Agentic AI?",
     "answer": "Traditional AI responds to a single input with a single output (e.g., 'translate this sentence'). Agentic AI, on the other hand, can break down a complex goal into sub-tasks, execute them in sequence or parallel, use external tools (search, code, APIs), self-correct when things go wrong, and loop until the goal is achieved — all autonomously."
   },
   {
-    "id": 6,
+    "id": 2,
     "category": "AI Fundamentals",
     "question": "What is the architecture of an AI system?",
     "answer": "A typical modern AI system consists of: (1) Foundation Model — a large language model (LLM) like GPT, Claude, or Gemini trained on vast data, (2) Prompt Layer — instructions and context that guide the model, (3) Retrieval (RAG) — a mechanism to fetch relevant documents or data so the model has up-to-date knowledge, (4) Tools & APIs — external capabilities the model can invoke (search, code execution, databases), (5) Orchestration Layer — the logic that chains prompts, tools, and decisions together, and (6) Memory — short-term (conversation) and long-term (persistent facts) storage."
   },
   {
-    "id": 7,
-    "category": "AI Fundamentals",
-    "question": "What are LLMs (Large Language Models)?",
-    "answer": "LLMs are neural network models trained on enormous text datasets to understand and generate human language. Examples include GPT-4, Claude, Gemini, and Llama. They can write text, answer questions, summarize documents, translate languages, write code, and reason through problems. They form the core 'brain' behind most modern AI applications."
-  },
-  {
-    "id": 8,
-    "category": "AI Fundamentals",
-    "question": "What is RAG (Retrieval-Augmented Generation)?",
-    "answer": "RAG is a technique that combines a language model with a search system. Instead of relying solely on the model's training data, RAG retrieves relevant documents from a knowledge base in real-time and feeds them to the model as context. This makes answers more accurate, up-to-date, and grounded in your actual data — reducing hallucinations."
-  },
-  {
-    "id": 9,
-    "category": "AI Fundamentals",
-    "question": "What is Prompt Engineering?",
-    "answer": "Prompt engineering is the practice of crafting effective instructions (prompts) for AI models to get the best results. Good prompts include clear goals, relevant context, examples of desired output, and constraints. It's a core skill for working with any AI system — from chatbots to code generators to image creators."
-  },
-  {
-    "id": 10,
-    "category": "AI Fundamentals",
-    "question": "What are Hallucinations in AI?",
-    "answer": "Hallucinations occur when an AI model generates information that sounds confident and plausible but is factually wrong. This happens because LLMs predict likely-sounding text based on patterns, not truth. Mitigation strategies include RAG (grounding in real data), temperature tuning, chain-of-thought prompting, and human review."
-  },
-  {
-    "id": 11,
-    "category": "GitHub & DevOps",
-    "question": "What is GitHub?",
-    "answer": "GitHub is a cloud platform for hosting code repositories using Git version control. It lets you store code, track changes, collaborate with others, review code, manage issues, automate testing and deployment (CI/CD), and host documentation. It's the world's largest developer platform with 100M+ developers."
-  },
-  {
-    "id": 12,
-    "category": "GitHub & DevOps",
-    "question": "How is GitHub used in AI development?",
-    "answer": "GitHub is central to AI development: (1) Hosting code for AI apps, models, and experiments, (2) GitHub Copilot — an AI pair-programmer that writes code suggestions in your editor, (3) GitHub Actions — automating testing, training, and deployment pipelines, (4) Collaboration — teams review AI code, track issues, and manage releases, (5) Open source — most AI frameworks (PyTorch, LangChain, etc.) live on GitHub."
-  },
-  {
-    "id": 13,
-    "category": "GitHub & DevOps",
-    "question": "What is Git vs GitHub?",
-    "answer": "Git is the version control system — a tool that tracks changes to files on your computer. GitHub is a cloud service built on top of Git that adds collaboration features: pull requests, issues, actions, and a web interface. Think of Git as the engine and GitHub as the car — Git is local, GitHub is the online platform."
-  },
-  {
-    "id": 14,
-    "category": "GitHub & DevOps",
-    "question": "What alternatives are there for GitHub?",
-    "answer": "Popular alternatives include: GitLab (self-hosted or cloud, strong CI/CD), Bitbucket (by Atlassian, integrates with Jira), Azure DevOps (Microsoft's enterprise platform), AWS CodeCommit (Amazon's Git service), Gitea/Forgejo (lightweight self-hosted), and SourceForge (legacy open-source hosting). Each has trade-offs in features, pricing, and ecosystem."
-  },
-  {
-    "id": 15,
-    "category": "GitHub & DevOps",
-    "question": "Is there a limit on repositories in GitHub?",
-    "answer": "No — GitHub free accounts get unlimited public and private repositories. There are limits on storage (repos up to ~5GB recommended), file size (100MB max per file), and some features (Actions minutes, Packages storage), but for practical purposes, you can create as many repos as you need."
-  },
-  {
-    "id": 16,
-    "category": "GitHub & DevOps",
-    "question": "What are GitHub Personal Access Tokens?",
-    "answer": "Personal Access Tokens (PATs) are credentials that let you authenticate with GitHub from the command line, scripts, or apps — instead of using your password. You can create multiple tokens with different scopes (permissions). They expire based on the duration you set, and you can revoke them anytime. There's no practical limit on how many you can create."
-  },
-  {
-    "id": 17,
-    "category": "GitHub & DevOps",
-    "question": "What happens when a GitHub token expires?",
-    "answer": "When a token expires, any tool or script using it will stop authenticating — but your repositories, code, and deployed apps are NOT affected. Your Vercel/Netlify deployments, live websites, and existing code remain exactly as they are. You simply generate a new token and update your credentials."
-  },
-  {
-    "id": 18,
-    "category": "Vibe Coding & Setup",
-    "question": "What is Vibe Coding?",
-    "answer": "Vibe coding is a development style where you describe what you want in natural language, and an AI assistant (like GitHub Copilot, Cursor, or Claude) writes the code for you. You guide the AI with prompts, review the output, and iterate — building functional applications without writing every line yourself. It democratizes software creation."
-  },
-  {
-    "id": 19,
-    "category": "Vibe Coding & Setup",
-    "question": "How do I set up VS Code for AI-assisted development?",
-    "answer": "Step by step: (1) Install VS Code from code.visualstudio.com, (2) Install the GitHub Copilot extension from the Extensions marketplace, (3) Sign in with your GitHub account, (4) Install other helpful extensions: Prettier (formatting), ESLint (linting), Live Server (preview), (5) Open a folder, start a file, and begin typing — Copilot will suggest completions. Use Ctrl+I to open Copilot Chat for conversational coding."
-  },
-  {
-    "id": 20,
-    "category": "Vibe Coding & Setup",
-    "question": "How do I create and deploy a web app from scratch?",
-    "answer": "The simplest path: (1) Create a folder for your project, (2) Create index.html, styles.css, and script.js files, (3) Use VS Code + Copilot to build your app with AI assistance, (4) Test locally with Live Server extension, (5) Install Vercel CLI: npm i -g vercel, (6) Run 'vercel' in your project folder to deploy, (7) Your app is live with a URL. For updates, just run 'vercel --prod' again."
-  },
-  {
-    "id": 21,
-    "category": "Vibe Coding & Setup",
-    "question": "What is Vercel and how does it host my apps?",
-    "answer": "Vercel is a cloud platform for deploying web applications. It's free for personal projects and offers: instant deployments, automatic HTTPS, global CDN, custom domains, and preview URLs for every push. You deploy via CLI ('vercel --prod') or by connecting a GitHub repo for automatic deployments on every push."
-  },
-  {
-    "id": 22,
-    "category": "Vibe Coding & Setup",
-    "question": "Do my Vercel apps depend on GitHub?",
-    "answer": "No — Vercel apps are independent of GitHub. When you deploy from the CLI ('vercel --prod'), Vercel stores its own copy of your code. Your live apps continue working even if you change GitHub repos, tokens expire, or you disconnect GitHub entirely. GitHub is only needed if you set up auto-deploy from a repo."
-  },
-  {
-    "id": 23,
-    "category": "Vibe Coding & Setup",
-    "question": "What is GitHub Copilot?",
-    "answer": "GitHub Copilot is an AI-powered code assistant that runs inside your editor (VS Code, JetBrains, etc.). It suggests code completions, writes entire functions, explains code, fixes bugs, generates tests, and can be conversed with via chat. It's powered by OpenAI models and trained on public code. Plans start at $10/month for individuals."
-  },
-  {
-    "id": 24,
-    "category": "Vibe Coding & Setup",
-    "question": "What are MCPs (Model Context Protocol)?",
-    "answer": "MCP (Model Context Protocol) is an open standard that lets AI assistants connect to external tools and data sources. Think of it as USB-C for AI — a universal plug that lets models access databases, APIs, file systems, and services through a standardized interface. It enables AI agents to take real actions beyond just generating text."
-  },
-  {
-    "id": 25,
-    "category": "Security & Governance",
-    "question": "How can security be implemented in AI systems?",
-    "answer": "Key security practices: (1) Input validation — sanitize all user inputs to prevent injection attacks, (2) Access control — restrict who can access AI models and data, (3) Data privacy — encrypt sensitive data, anonymize training data, comply with GDPR/HIPAA, (4) Model security — prevent prompt injection, jailbreaking, and data extraction, (5) Audit logging — track all AI interactions for accountability, (6) Output filtering — detect and block harmful/biased outputs."
-  },
-  {
-    "id": 26,
-    "category": "Security & Governance",
-    "question": "What is AI Governance?",
-    "answer": "AI governance is the framework of policies, processes, and controls that ensure AI is used responsibly. It covers: ethical guidelines, bias detection and mitigation, transparency and explainability, regulatory compliance, risk assessment, model lifecycle management, and accountability structures. Organizations build AI governance boards to oversee these aspects."
-  },
-  {
-    "id": 27,
-    "category": "Security & Governance",
-    "question": "What is Responsible AI?",
-    "answer": "Responsible AI is an approach to developing and deploying AI that prioritizes: Fairness (no discrimination), Transparency (explainable decisions), Privacy (data protection), Safety (no harm), Accountability (clear ownership), and Inclusiveness (works for everyone). Major tech companies and governments publish Responsible AI principles to guide development."
-  },
-  {
-    "id": 28,
-    "category": "Security & Governance",
-    "question": "What is Prompt Injection?",
-    "answer": "Prompt injection is a security attack where malicious input tricks an AI model into ignoring its instructions and doing something unintended — like leaking system prompts, bypassing safety filters, or generating harmful content. Defense strategies include input sanitization, system prompt hardening, output filtering, and using separate models for validation."
-  },
-  {
-    "id": 29,
-    "category": "Security & Governance",
-    "question": "How do I keep my API keys and tokens safe?",
-    "answer": "Never hardcode secrets in your code. Best practices: (1) Use environment variables for local development, (2) Use a secrets manager (GitHub Secrets, Vercel Environment Variables, Azure Key Vault) for production, (3) Add .env to .gitignore so secrets don't get committed, (4) Rotate tokens regularly and set expiry dates, (5) Use the principle of least privilege — grant only the permissions needed."
-  },
-  {
-    "id": 30,
-    "category": "AI Tools & Ecosystem",
-    "question": "What are the most popular AI coding assistants?",
-    "answer": "The leading AI coding assistants are: GitHub Copilot (VS Code, JetBrains — most mature), Cursor (AI-native code editor), Amazon CodeWhisperer (AWS-focused), Tabnine (privacy-focused, on-premise option), Codeium/Windsurf (free tier available), and Claude/ChatGPT (conversational coding). Each has different strengths in code completion, chat, and agent capabilities."
-  },
-  {
-    "id": 31,
-    "category": "AI Tools & Ecosystem",
-    "question": "What is the difference between ChatGPT, Claude, and Gemini?",
-    "answer": "All three are AI chatbots powered by different LLMs. ChatGPT (by OpenAI) — the most widely used, strong at general tasks and coding. Claude (by Anthropic) — focuses on safety, handles very long documents, excellent at analysis and writing. Gemini (by Google) — strong multimodal abilities (text, image, video), integrated with Google services. Each has free and paid tiers with different capabilities."
-  },
-  {
-    "id": 32,
-    "category": "AI Tools & Ecosystem",
-    "question": "What are AI Frameworks for building applications?",
-    "answer": "Key frameworks: LangChain (Python/JS — chain LLM calls, tools, and memory), LlamaIndex (data indexing and retrieval for RAG), Semantic Kernel (Microsoft's AI orchestration framework), AutoGen (multi-agent framework by Microsoft), CrewAI (multi-agent with roles), Haystack (NLP pipelines), and Streamlit/Gradio (rapid AI app frontends)."
-  },
-  {
-    "id": 33,
-    "category": "AI Tools & Ecosystem",
-    "question": "What is an AI Model Provider vs an AI Application?",
-    "answer": "A model provider (OpenAI, Anthropic, Google, Meta) creates and hosts the underlying LLM. An AI application (ChatGPT, Copilot, Perplexity) is built ON TOP of these models, adding UI, tools, memory, and workflows. Think of the model as the engine and the application as the car — multiple apps can use the same underlying model."
-  },
-  {
-    "id": 34,
-    "category": "Getting Started",
-    "question": "I'm new to coding — where should I start?",
-    "answer": "Start here: (1) Learn HTML basics (structure), CSS (styling), and JavaScript (interactivity) — freeCodeCamp.org is excellent, (2) Install VS Code + GitHub Copilot, (3) Build a simple personal webpage as your first project, (4) Deploy it with Vercel to see it live, (5) Learn Git basics (commit, push, pull), (6) Create a GitHub account and push your code. The whole journey from zero to a deployed website can happen in a single afternoon with AI assistance."
-  },
-  {
-    "id": 35,
-    "category": "Getting Started",
-    "question": "How do I configure GitHub for the first time?",
-    "answer": "Step by step: (1) Create an account at github.com, (2) Install Git from git-scm.com, (3) Configure your identity: 'git config --global user.name \"Your Name\"' and 'git config --global user.email \"you@email.com\"', (4) Install GitHub CLI: 'winget install GitHub.cli' (Windows) or 'brew install gh' (Mac), (5) Authenticate: 'gh auth login', (6) Create your first repo: 'gh repo create my-first-app --public', (7) Push your code: 'git init && git add . && git commit -m \"first commit\" && git push'."
-  },
-  {
-    "id": 36,
-    "category": "Getting Started",
-    "question": "What tools do I need to start building AI-powered apps?",
-    "answer": "The essential toolkit: (1) VS Code — your code editor, (2) GitHub Copilot — AI assistant inside VS Code, (3) Git + GitHub — version control and code hosting, (4) Node.js — JavaScript runtime (needed for many tools), (5) Vercel CLI — deploy your apps instantly, (6) A web browser — for testing and using AI chatbots. Optional but helpful: Python (for AI/ML work), Docker (for containers), and Postman (for API testing)."
-  },
-  {
-    "id": 37,
-    "category": "Getting Started",
-    "question": "How do I move a repository from one GitHub account to another?",
-    "answer": "Two approaches: (1) Transfer — Go to repo Settings > Transfer, enter the new owner's account (both accounts must be accessible). This preserves stars, issues, and history. (2) Clone and re-push — Clone the repo locally, create a new empty repo on the target account, change the remote URL, and push. This copies all code and history but doesn't transfer issues/stars. The second approach is simpler when accounts aren't in the same org."
-  },
-  {
-    "id": 38,
-    "category": "AI Fundamentals",
-    "question": "What is Fine-Tuning?",
-    "answer": "Fine-tuning is the process of taking a pre-trained AI model and further training it on your own specific dataset to make it better at a particular task or domain. For example, fine-tuning GPT on medical records to create a healthcare-specific assistant. It's more expensive than prompt engineering but can significantly improve performance for specialized use cases."
-  },
-  {
-    "id": 39,
+    "id": 3,
     "category": "AI Fundamentals",
     "question": "What is the difference between Open Source and Proprietary AI models?",
     "answer": "Proprietary models (GPT-4, Claude, Gemini) are owned by companies — you access them via APIs and pay per use, but can't see or modify the model. Open source models (Llama, Mistral, Phi) release their weights publicly — you can download, run locally, fine-tune, and deploy them yourself. Open source gives more control and privacy; proprietary models often have better performance and easier setup."
   },
   {
-    "id": 40,
+    "id": 4,
+    "category": "GitHub & DevOps",
+    "question": "What is GitHub?",
+    "answer": "GitHub is a cloud platform for hosting code repositories using Git version control. It lets you store code, track changes, collaborate with others, review code, manage issues, automate testing and deployment (CI/CD), and host documentation. It's the world's largest developer platform with 100M+ developers."
+  },
+  {
+    "id": 5,
+    "category": "GitHub & DevOps",
+    "question": "How is GitHub used in AI development?",
+    "answer": "GitHub is central to AI development: (1) Hosting code for AI apps, models, and experiments, (2) GitHub Copilot — an AI pair-programmer that writes code suggestions in your editor, (3) GitHub Actions — automating testing, training, and deployment pipelines, (4) Collaboration — teams review AI code, track issues, and manage releases, (5) Open source — most AI frameworks (PyTorch, LangChain, etc.) live on GitHub."
+  },
+  {
+    "id": 6,
+    "category": "GitHub & DevOps",
+    "question": "What is Git vs GitHub?",
+    "answer": "Git is the version control system — a tool that tracks changes to files on your computer. GitHub is a cloud service built on top of Git that adds collaboration features: pull requests, issues, actions, and a web interface. Think of Git as the engine and GitHub as the car — Git is local, GitHub is the online platform."
+  },
+  {
+    "id": 7,
+    "category": "GitHub & DevOps",
+    "question": "What alternatives are there for GitHub?",
+    "answer": "Popular alternatives include: GitLab (self-hosted or cloud, strong CI/CD), Bitbucket (by Atlassian, integrates with Jira), Azure DevOps (Microsoft's enterprise platform), AWS CodeCommit (Amazon's Git service), Gitea/Forgejo (lightweight self-hosted), and SourceForge (legacy open-source hosting). Each has trade-offs in features, pricing, and ecosystem."
+  },
+  {
+    "id": 8,
+    "category": "GitHub & DevOps",
+    "question": "Is there a limit on repositories in GitHub?",
+    "answer": "No — GitHub free accounts get unlimited public and private repositories. There are limits on storage (repos up to ~5GB recommended), file size (100MB max per file), and some features (Actions minutes, Packages storage), but for practical purposes, you can create as many repos as you need."
+  },
+  {
+    "id": 9,
+    "category": "GitHub & DevOps",
+    "question": "What are GitHub Personal Access Tokens?",
+    "answer": "Personal Access Tokens (PATs) are credentials that let you authenticate with GitHub from the command line, scripts, or apps — instead of using your password. You can create multiple tokens with different scopes (permissions). They expire based on the duration you set, and you can revoke them anytime. There's no practical limit on how many you can create."
+  },
+  {
+    "id": 10,
+    "category": "GitHub & DevOps",
+    "question": "What happens when a GitHub token expires?",
+    "answer": "When a token expires, any tool or script using it will stop authenticating — but your repositories, code, and deployed apps are NOT affected. Your Vercel/Netlify deployments, live websites, and existing code remain exactly as they are. You simply generate a new token and update your credentials."
+  },
+  {
+    "id": 11,
+    "category": "Vibe Coding & Setup",
+    "question": "What is Vibe Coding?",
+    "answer": "Vibe coding is a development style where you describe what you want in natural language, and an AI assistant (like GitHub Copilot, Cursor, or Claude) writes the code for you. You guide the AI with prompts, review the output, and iterate — building functional applications without writing every line yourself. It democratizes software creation."
+  },
+  {
+    "id": 12,
+    "category": "Vibe Coding & Setup",
+    "question": "How do I set up VS Code for AI-assisted development?",
+    "answer": "Step by step: (1) Install VS Code from code.visualstudio.com, (2) Install the GitHub Copilot extension from the Extensions marketplace, (3) Sign in with your GitHub account, (4) Install other helpful extensions: Prettier (formatting), ESLint (linting), Live Server (preview), (5) Open a folder, start a file, and begin typing — Copilot will suggest completions. Use Ctrl+I to open Copilot Chat for conversational coding."
+  },
+  {
+    "id": 13,
+    "category": "Vibe Coding & Setup",
+    "question": "How do I create and deploy a web app from scratch?",
+    "answer": "The simplest path: (1) Create a folder for your project, (2) Create index.html, styles.css, and script.js files, (3) Use VS Code + Copilot to build your app with AI assistance, (4) Test locally with Live Server extension, (5) Install Vercel CLI: npm i -g vercel, (6) Run 'vercel' in your project folder to deploy, (7) Your app is live with a URL. For updates, just run 'vercel --prod' again."
+  },
+  {
+    "id": 14,
+    "category": "Vibe Coding & Setup",
+    "question": "What is Vercel and how does it host my apps?",
+    "answer": "Vercel is a cloud platform for deploying web applications. It's free for personal projects and offers: instant deployments, automatic HTTPS, global CDN, custom domains, and preview URLs for every push. You deploy via CLI ('vercel --prod') or by connecting a GitHub repo for automatic deployments on every push."
+  },
+  {
+    "id": 15,
+    "category": "Vibe Coding & Setup",
+    "question": "Do my Vercel apps depend on GitHub?",
+    "answer": "No — Vercel apps are independent of GitHub. When you deploy from the CLI ('vercel --prod'), Vercel stores its own copy of your code. Your live apps continue working even if you change GitHub repos, tokens expire, or you disconnect GitHub entirely. GitHub is only needed if you set up auto-deploy from a repo."
+  },
+  {
+    "id": 16,
+    "category": "Vibe Coding & Setup",
+    "question": "What is GitHub Copilot?",
+    "answer": "GitHub Copilot is an AI-powered code assistant that runs inside your editor (VS Code, JetBrains, etc.). It suggests code completions, writes entire functions, explains code, fixes bugs, generates tests, and can be conversed with via chat. It's powered by OpenAI models and trained on public code. Plans start at $10/month for individuals."
+  },
+  {
+    "id": 17,
+    "category": "Vibe Coding & Setup",
+    "question": "What are MCPs (Model Context Protocol)?",
+    "answer": "MCP (Model Context Protocol) is an open standard that lets AI assistants connect to external tools and data sources. Think of it as USB-C for AI — a universal plug that lets models access databases, APIs, file systems, and services through a standardized interface. It enables AI agents to take real actions beyond just generating text."
+  },
+  {
+    "id": 18,
+    "category": "Security & Governance",
+    "question": "How can security be implemented in AI systems?",
+    "answer": "Key security practices: (1) Input validation — sanitize all user inputs to prevent injection attacks, (2) Access control — restrict who can access AI models and data, (3) Data privacy — encrypt sensitive data, anonymize training data, comply with GDPR/HIPAA, (4) Model security — prevent prompt injection, jailbreaking, and data extraction, (5) Audit logging — track all AI interactions for accountability, (6) Output filtering — detect and block harmful/biased outputs."
+  },
+  {
+    "id": 19,
+    "category": "Security & Governance",
+    "question": "How do I keep my API keys and tokens safe?",
+    "answer": "Never hardcode secrets in your code. Best practices: (1) Use environment variables for local development, (2) Use a secrets manager (GitHub Secrets, Vercel Environment Variables, Azure Key Vault) for production, (3) Add .env to .gitignore so secrets don't get committed, (4) Rotate tokens regularly and set expiry dates, (5) Use the principle of least privilege — grant only the permissions needed."
+  },
+  {
+    "id": 20,
     "category": "Security & Governance",
     "question": "What data privacy concerns exist with AI?",
     "answer": "Key concerns: (1) Training data — models may memorize and leak personal information from training, (2) User input — conversations with AI chatbots may be stored and used for training, (3) Sensitive data exposure — pasting confidential data into AI tools risks leaks, (4) Compliance — AI usage must comply with GDPR, HIPAA, SOC2, etc., (5) Shadow AI — employees using unapproved AI tools without IT oversight. Mitigations include enterprise AI platforms, data loss prevention (DLP), and clear AI usage policies."
+  },
+  {
+    "id": 21,
+    "category": "AI Tools & Ecosystem",
+    "question": "What are the most popular AI coding assistants?",
+    "answer": "The leading AI coding assistants are: GitHub Copilot (VS Code, JetBrains — most mature), Cursor (AI-native code editor), Amazon CodeWhisperer (AWS-focused), Tabnine (privacy-focused, on-premise option), Codeium/Windsurf (free tier available), and Claude/ChatGPT (conversational coding). Each has different strengths in code completion, chat, and agent capabilities."
+  },
+  {
+    "id": 22,
+    "category": "AI Tools & Ecosystem",
+    "question": "What is the difference between ChatGPT, Claude, and Gemini?",
+    "answer": "All three are AI chatbots powered by different LLMs. ChatGPT (by OpenAI) — the most widely used, strong at general tasks and coding. Claude (by Anthropic) — focuses on safety, handles very long documents, excellent at analysis and writing. Gemini (by Google) — strong multimodal abilities (text, image, video), integrated with Google services. Each has free and paid tiers with different capabilities."
+  },
+  {
+    "id": 23,
+    "category": "AI Tools & Ecosystem",
+    "question": "What are AI Frameworks for building applications?",
+    "answer": "Key frameworks: LangChain (Python/JS — chain LLM calls, tools, and memory), LlamaIndex (data indexing and retrieval for RAG), Semantic Kernel (Microsoft's AI orchestration framework), AutoGen (multi-agent framework by Microsoft), CrewAI (multi-agent with roles), Haystack (NLP pipelines), and Streamlit/Gradio (rapid AI app frontends)."
+  },
+  {
+    "id": 24,
+    "category": "AI Tools & Ecosystem",
+    "question": "What is an AI Model Provider vs an AI Application?",
+    "answer": "A model provider (OpenAI, Anthropic, Google, Meta) creates and hosts the underlying LLM. An AI application (ChatGPT, Copilot, Perplexity) is built ON TOP of these models, adding UI, tools, memory, and workflows. Think of the model as the engine and the application as the car — multiple apps can use the same underlying model."
+  },
+  {
+    "id": 25,
+    "category": "Getting Started",
+    "question": "I'm new to coding — where should I start?",
+    "answer": "Start here: (1) Learn HTML basics (structure), CSS (styling), and JavaScript (interactivity) — freeCodeCamp.org is excellent, (2) Install VS Code + GitHub Copilot, (3) Build a simple personal webpage as your first project, (4) Deploy it with Vercel to see it live, (5) Learn Git basics (commit, push, pull), (6) Create a GitHub account and push your code. The whole journey from zero to a deployed website can happen in a single afternoon with AI assistance."
+  },
+  {
+    "id": 26,
+    "category": "Getting Started",
+    "question": "How do I configure GitHub for the first time?",
+    "answer": "Step by step: (1) Create an account at github.com, (2) Install Git from git-scm.com, (3) Configure your identity: 'git config --global user.name \"Your Name\"' and 'git config --global user.email \"you@email.com\"', (4) Install GitHub CLI: 'winget install GitHub.cli' (Windows) or 'brew install gh' (Mac), (5) Authenticate: 'gh auth login', (6) Create your first repo: 'gh repo create my-first-app --public', (7) Push your code: 'git init && git add . && git commit -m \"first commit\" && git push'."
+  },
+  {
+    "id": 27,
+    "category": "Getting Started",
+    "question": "What tools do I need to start building AI-powered apps?",
+    "answer": "The essential toolkit: (1) VS Code — your code editor, (2) GitHub Copilot — AI assistant inside VS Code, (3) Git + GitHub — version control and code hosting, (4) Node.js — JavaScript runtime (needed for many tools), (5) Vercel CLI — deploy your apps instantly, (6) A web browser — for testing and using AI chatbots. Optional but helpful: Python (for AI/ML work), Docker (for containers), and Postman (for API testing)."
+  },
+  {
+    "id": 28,
+    "category": "Getting Started",
+    "question": "How do I move a repository from one GitHub account to another?",
+    "answer": "Two approaches: (1) Transfer — Go to repo Settings > Transfer, enter the new owner's account (both accounts must be accessible). This preserves stars, issues, and history. (2) Clone and re-push — Clone the repo locally, create a new empty repo on the target account, change the remote URL, and push. This copies all code and history but doesn't transfer issues/stars. The second approach is simpler when accounts aren't in the same org."
   }
 ]
