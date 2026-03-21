@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Compass — Your AI Knowledge Hub</title>
+  <meta name="description" content="AI knowledge hub — curated tools, glossary, prompt library, trends and learning paths to navigate the AI ecosystem with confidence." />
+  <meta property="og:title" content="AI Compass — Your AI Knowledge Hub" />
+  <meta property="og:description" content="Curated tools, glossary, prompt library, trends and learning paths to navigate the AI ecosystem with confidence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://myaicompass.vercel.app" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">🧭 AI Compass</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Tools</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="prompts.html">Prompts</a>
+        <a href="trends.html">Trends</a>
+        <a href="learn.html">Learn</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER / HERO ===== -->
+  <header class="hero">
+    <div class="container">
+      <h1>AI Compass</h1>
+      <p class="hero-caption">Your compass to navigate the AI ecosystem with confidence.</p>
+      <!-- Search moved here -->
+      <div class="hero-search">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          type="text"
+          id="heroSearchInput"
+          placeholder="Search tools by name or description…"
+          autocomplete="off"
+        />
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== FILTER BAR (sticky) ===== -->
+  <section class="filter-bar" id="filterBar">
+    <div class="container">
+
+      <!-- Category -->
+      <div class="filter-group">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+        </select>
+      </div>
+
+      <!-- Type -->
+      <div class="filter-group">
+        <label for="typeFilter">Type</label>
+        <select id="typeFilter">
+          <option value="all">All Types</option>
+        </select>
+      </div>
+
+      <!-- Use-case -->
+      <div class="filter-group">
+        <label for="useCaseFilter">Use-case</label>
+        <select id="useCaseFilter">
+          <option value="all">All Use-cases</option>
+        </select>
+      </div>
+
+      <!-- Persona -->
+      <div class="filter-group">
+        <label for="personaFilter">Persona</label>
+        <select id="personaFilter">
+          <option value="all">All Personas</option>
+        </select>
+      </div>
+
+      <!-- Purpose -->
+      <div class="filter-group">
+        <label for="purposeFilter">Purpose</label>
+        <select id="purposeFilter">
+          <option value="all">All Purposes</option>
+        </select>
+      </div>
+
+      <!-- Reset -->
+      <button class="btn-reset" id="resetBtn" title="Reset all filters">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        Reset
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS COUNT ===== -->
+  <section class="results-info container">
+    <p id="resultsCount"></p>
+  </section>
+
+  <!-- ===== CARD GRID ===== -->
+  <main class="container">
+    <div class="card-grid" id="cardGrid">
+      <!-- Cards rendered by script.js -->
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty-state hidden" id="emptyState">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      <p>No tools match your current filters.</p>
+      <button class="btn-clear-filters" id="clearFiltersBtn" onclick="document.getElementById('resetBtn').click()">Clear all filters</button>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 AI Tools Catalog &middot; Built by <a href="https://sivakanth.vercel.app" target="_blank" rel="noopener noreferrer">Sivakanth Badigenchala</a></p>
+      <p class="footer-sub">Inspired by <a href="https://airise.vercel.app" target="_blank" rel="noopener noreferrer">AiRISE</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

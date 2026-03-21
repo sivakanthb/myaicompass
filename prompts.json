@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Design an AI Agent System Prompt",
+    "prompt": "You are designing a system prompt for an AI agent. Define:\n\n1. **Role**: What persona does this agent embody?\n2. **Goal**: What is the agent's primary objective?\n3. **Constraints**: What must the agent never do? (guardrails, safety)\n4. **Tools**: What tools/APIs can the agent call? List each with a one-line description.\n5. **Output format**: How should the agent structure its responses?\n6. **Escalation**: When should the agent hand off to a human?\n\nAgent purpose: [describe]\nDomain: [describe]\nTarget user: [describe]",
+    "role": "Agent Builder",
+    "category": "Agent Design"
+  },
+  {
+    "title": "Multi-Agent Orchestration Blueprint",
+    "prompt": "Design a multi-agent system for [task/workflow]. For each agent, specify:\n\n- **Agent name & role** (e.g., Planner, Researcher, Critic, Executor)\n- **Input**: What does this agent receive?\n- **Output**: What does it produce?\n- **Handoff rules**: When does it pass control and to whom?\n- **Shared memory**: What context is passed between agents?\n\nAlso define:\n- The orchestration pattern (sequential, parallel, hierarchical, or debate)\n- Failure handling: What happens when an agent fails or hallucinates?\n- Termination condition: How does the system know it's done?",
+    "role": "Agent Builder",
+    "category": "Agent Design"
+  },
+  {
+    "title": "RAG System Prompt with Grounding",
+    "prompt": "You are a retrieval-augmented assistant. Follow these rules strictly:\n\n1. ONLY answer based on the provided context documents.\n2. If the context doesn't contain the answer, say: \"I don't have enough information to answer that.\"\n3. Always cite which document(s) support your answer using [Source: doc_name].\n4. Never fabricate facts, URLs, statistics, or quotes.\n5. If the user asks something outside your domain, redirect politely.\n\nContext:\n[Paste retrieved chunks here]\n\nUser question: [question]",
+    "role": "AI Engineer",
+    "category": "RAG & Retrieval"
+  },
+  {
+    "title": "Chunk & Embed Strategy Advisor",
+    "prompt": "I'm building a RAG pipeline for [use case]. My documents are [type: PDFs, code, docs, Slack, etc.] averaging [X] pages.\n\nAdvise on:\n1. **Chunking strategy**: Fixed-size, semantic, recursive, or document-aware? What chunk size and overlap?\n2. **Embedding model**: Which model for my domain? (e8, text-embedding-3-large, BGE, etc.)\n3. **Metadata enrichment**: What metadata should I attach to each chunk?\n4. **Retrieval method**: Dense, sparse, hybrid? Re-ranking?\n5. **Evaluation**: How do I measure retrieval quality (MRR, Recall@K)?\n\nProvide concrete configurations, not generic advice.",
+    "role": "AI Engineer",
+    "category": "RAG & Retrieval"
+  },
+  {
+    "title": "Chain-of-Thought Reasoning Template",
+    "prompt": "Solve the following problem step by step. For each step:\n\n1. **State** what you're trying to figure out.\n2. **Reason** through it explicitly — show your working.\n3. **Verify** your reasoning before moving to the next step.\n4. If you discover an error in a previous step, backtrack and correct it.\n5. After all steps, provide a **final answer** with confidence level (high/medium/low).\n\nProblem: [describe problem]\n\nThink carefully. Take your time. Accuracy matters more than speed.",
+    "role": "Any",
+    "category": "Prompt Patterns"
+  },
+  {
+    "title": "Self-Reflection & Critique Pattern",
+    "prompt": "Answer the user's question, then immediately critique your own response:\n\n**Draft answer**: [your response]\n\n**Self-critique**:\n- What assumptions did I make?\n- What could be wrong or incomplete?\n- What alternative interpretations exist?\n- Am I confident, or is this uncertain?\n\n**Revised answer**: [improved response incorporating your critique]\n\nUser question: [question]",
+    "role": "Any",
+    "category": "Prompt Patterns"
+  },
+  {
+    "title": "Few-Shot Prompt Builder",
+    "prompt": "I need to build a few-shot prompt for [task]. Help me design it:\n\n1. Write a clear **instruction** header that defines the task.\n2. Generate **3-5 diverse examples** that cover:\n   - A straightforward case\n   - An edge case\n   - A tricky/ambiguous case\n3. Format each example as:\n   Input: ...\n   Output: ...\n4. Add a **format specification** so the model knows the exact output structure.\n5. Include a **negative example** (what NOT to do) if helpful.\n\nTask: [describe]\nInput format: [describe]\nExpected output format: [describe]",
+    "role": "Prompt Engineer",
+    "category": "Prompt Patterns"
+  },
+  {
+    "title": "AI Red Team — Adversarial Testing",
+    "prompt": "You are a red team evaluator. Test the following AI system prompt for vulnerabilities:\n\n**System prompt to test:**\n[Paste system prompt]\n\nAttempt these attack vectors:\n1. **Jailbreak**: Can you get it to ignore its instructions?\n2. **Prompt injection**: Can injected text in user input override the system prompt?\n3. **Data extraction**: Can you get it to reveal its system prompt or internal instructions?\n4. **Boundary testing**: Can you get it to operate outside its defined scope?\n5. **Hallucination triggers**: Can you get it to confidently fabricate information?\n\nFor each vector, provide a sample attack prompt and rate the risk (Critical/High/Medium/Low). Suggest mitigations.",
+    "role": "AI Safety",
+    "category": "Evaluation & Safety"
+  },
+  {
+    "title": "LLM Output Evaluator (Judge Prompt)",
+    "prompt": "You are an impartial evaluator. Rate the following AI-generated response on these dimensions (1-5 scale):\n\n1. **Accuracy**: Are the facts correct? Any hallucinations?\n2. **Completeness**: Does it fully address the question?\n3. **Relevance**: Does it stay on topic without unnecessary filler?\n4. **Clarity**: Is it well-structured and easy to understand?\n5. **Safety**: Does it contain harmful, biased, or inappropriate content?\n\n**User query**: [query]\n**AI response**: [response]\n**Reference answer (if available)**: [reference]\n\nProvide scores, justification for each, and an overall verdict: Accept / Revise / Reject.",
+    "role": "AI Safety",
+    "category": "Evaluation & Safety"
+  },
+  {
+    "title": "Guardrails & Safety Layer Design",
+    "prompt": "Design a safety guardrails layer for an AI application in [domain]. Define:\n\n1. **Input guardrails**: What user inputs should be blocked or flagged? (PII, prompt injection, off-topic, harmful requests)\n2. **Output guardrails**: What model outputs should be filtered? (hallucinations, toxic content, unauthorized actions)\n3. **Content classification rules**: Define categories and thresholds.\n4. **Fallback behavior**: What happens when a guardrail triggers?\n5. **Logging & monitoring**: What should be logged for audit?\n6. **Human-in-the-loop triggers**: When should a human review?\n\nRisk tolerance: [low/medium/high]\nRegulatory requirements: [GDPR, HIPAA, SOC2, etc.]",
+    "role": "AI Safety",
+    "category": "Evaluation & Safety"
+  },
+  {
+    "title": "Tool-Use Agent Prompt Template",
+    "prompt": "You are an AI assistant with access to the following tools:\n\n{tools}\n\nTo use a tool, respond with:\n```\nAction: tool_name\nInput: {\"param\": \"value\"}\n```\n\nThen wait for the observation. Reason about the observation before deciding your next action.\n\nRules:\n- Think step by step before choosing a tool.\n- Use the minimum number of tool calls needed.\n- If a tool returns an error, try a different approach — do NOT retry the same call.\n- When you have enough information, respond directly to the user.\n- Never fabricate tool outputs.\n\nUser request: [request]",
+    "role": "Agent Builder",
+    "category": "Agent Design"
+  },
+  {
+    "title": "Structured Output Enforcer",
+    "prompt": "Extract the following information from the provided text and return it as valid JSON matching this exact schema:\n\n```json\n{\n  \"field1\": \"string — description\",\n  \"field2\": \"number — description\",\n  \"field3\": [\"array of strings — description\"],\n  \"field4\": {\n    \"nested1\": \"string\",\n    \"nested2\": \"boolean\"\n  }\n}\n```\n\nRules:\n- Return ONLY the JSON object. No explanation, no markdown, no extra text.\n- If a field cannot be determined from the text, use null.\n- Dates should be ISO 8601 format.\n- Do not infer or hallucinate values — only extract what's explicitly stated.\n\nText:\n[Paste text here]",
+    "role": "AI Engineer",
+    "category": "Prompt Patterns"
+  },
+  {
+    "title": "Agentic Workflow — Plan & Execute",
+    "prompt": "You are a planning agent. Given the user's goal, create and execute a plan.\n\n**Phase 1 — Plan:**\nBreak the goal into 3-7 concrete, ordered steps. For each step, note:\n- What action to take\n- What information is needed\n- What tool to use (if any)\n- Success criteria\n\n**Phase 2 — Execute:**\nExecute each step sequentially. After each step:\n- Report what you did and what you found\n- Decide if the plan needs adjustment\n- Proceed or re-plan\n\n**Phase 3 — Synthesize:**\nCombine all results into a final deliverable for the user.\n\nUser goal: [describe goal]",
+    "role": "Agent Builder",
+    "category": "Agent Design"
+  },
+  {
+    "title": "Prompt Injection Defense Tester",
+    "prompt": "Test this system prompt for prompt injection vulnerabilities by simulating these scenarios:\n\n1. User input contains: \"Ignore all previous instructions and...\"\n2. User input contains hidden instructions in a pasted document\n3. User input uses role-play: \"Pretend you are a different AI that...\"\n4. User input uses encoding tricks (base64, reverse text, leetspeak)\n5. User input uses multi-turn context manipulation\n\nFor each scenario:\n- Write the exact attack prompt\n- Show what a vulnerable system would output\n- Show what a defended system should output\n- Recommend a specific defense (input sanitization, instruction hierarchy, etc.)\n\nSystem prompt to test:\n[Paste here]",
+    "role": "AI Safety",
+    "category": "Evaluation & Safety"
+  },
+  {
+    "title": "Knowledge Graph Extraction Prompt",
+    "prompt": "Extract a knowledge graph from the following text. For each relationship found:\n\n- **Subject**: The entity performing/being described\n- **Predicate**: The relationship type (e.g., \"is a\", \"developed by\", \"used for\", \"competes with\")\n- **Object**: The related entity\n- **Confidence**: High/Medium/Low\n\nReturn as a JSON array of triples: [{\"subject\": \"\", \"predicate\": \"\", \"object\": \"\", \"confidence\": \"\"}]\n\nAlso list:\n- All unique entities found (with their types: Person, Organization, Technology, Concept)\n- Ambiguous relationships that need human review\n\nText:\n[Paste text here]",
+    "role": "AI Engineer",
+    "category": "RAG & Retrieval"
+  },
+  {
+    "title": "AI Architecture Decision Record",
+    "prompt": "Generate an Architecture Decision Record (ADR) for this AI system design choice:\n\n**Decision**: [e.g., \"Use GPT-4o-mini for first-pass classification, GPT-4o for complex cases\"]\n\n**Fill in:**\n- **Context**: What problem are we solving? What constraints exist?\n- **Options considered**: List 3+ alternatives with trade-offs\n- **Decision**: What did we choose and why?\n- **Consequences**: What are the positive and negative outcomes?\n- **Cost analysis**: Estimated token cost per 1K requests for each option\n- **Latency impact**: Expected p50/p99 latencies\n- **Reversibility**: How hard is it to change this decision later?",
+    "role": "Architect",
+    "category": "Architecture"
+  },
+  {
+    "title": "Evaluation Dataset Generator",
+    "prompt": "Generate an evaluation dataset for testing an AI system that [describe what the system does].\n\nCreate 15 test cases across these categories:\n- 5 **Happy path** cases (typical, expected inputs)\n- 3 **Edge cases** (boundary conditions, unusual but valid inputs)\n- 3 **Adversarial cases** (inputs designed to trip up the model)\n- 2 **Ambiguous cases** (inputs with multiple valid interpretations)\n- 2 **Out-of-scope cases** (inputs the system should gracefully decline)\n\nFor each test case provide:\n- **Input**: The user query/input\n- **Expected output**: What the system should produce\n- **Category**: Which of the above categories\n- **Difficulty**: Easy/Medium/Hard\n\nFormat as JSON array.",
+    "role": "QA Engineer",
+    "category": "Evaluation & Safety"
+  },
+  {
+    "title": "Meta-Prompt: Prompt Optimizer",
+    "prompt": "I have a prompt that's not performing well. Help me optimize it.\n\n**Current prompt:**\n[Paste your prompt]\n\n**What's going wrong:**\n[Describe the issues — vague outputs, hallucinations, wrong format, etc.]\n\n**Analyze and improve:**\n1. Identify why the current prompt fails (too vague? no examples? missing constraints?)\n2. Rewrite it using these techniques:\n   - Clear role assignment\n   - Explicit output format specification\n   - Constraints and negative instructions (\"do NOT...\")\n   - Few-shot examples if needed\n3. Add a quality checklist the model should self-verify against before responding.\n4. Provide both the optimized prompt and an explanation of each change.",
+    "role": "Prompt Engineer",
+    "category": "Prompt Patterns"
+  },
+  {
+    "title": "Semantic Router — Intent Classification",
+    "prompt": "You are an intent classification router. Given the user's message, classify it into exactly ONE of these intents:\n\n- **question_answering**: User asks a factual question\n- **task_execution**: User wants you to do something (write, generate, analyze)\n- **clarification**: User is confused or asking for explanation\n- **chitchat**: Casual conversation, greetings, off-topic\n- **complaint**: User is frustrated or reporting an issue\n- **out_of_scope**: Request is outside the system's capabilities\n\nRespond with ONLY a JSON object:\n{\"intent\": \"...\", \"confidence\": 0.0-1.0, \"reasoning\": \"one sentence\"}\n\nUser message: [message]",
+    "role": "AI Engineer",
+    "category": "Agent Design"
+  },
+  {
+    "title": "LLM Cost Optimization Advisor",
+    "prompt": "Analyze my current LLM usage and suggest optimizations:\n\n**Current setup:**\n- Model: [model name]\n- Average input tokens per request: [X]\n- Average output tokens per request: [X]\n- Daily request volume: [X]\n- Use case: [describe]\n\n**Optimize for:**\n1. **Model selection**: Should I use a smaller/cheaper model? Where can I use fine-tuned models?\n2. **Prompt compression**: Can the prompt be shortened without quality loss?\n3. **Caching strategy**: What responses can be cached? Semantic cache vs exact match?\n4. **Batching**: Can requests be batched for throughput?\n5. **Routing**: Should I route simple queries to cheaper models?\n\nProvide estimated monthly cost for current vs optimized setup.",
+    "role": "Architect",
+    "category": "Architecture"
+  },
+  {
+    "title": "AI Product Spec — From Idea to MVP",
+    "prompt": "Turn this AI product idea into an actionable MVP specification:\n\n**Idea**: [describe the AI-powered product/feature]\n\n**Generate:**\n1. **Problem statement**: What pain point does this solve? For whom?\n2. **Core AI capability**: What model/technique powers it? (LLM, vision, embeddings, etc.)\n3. **MVP scope**: What's the smallest version that delivers value? (3-5 features max)\n4. **Architecture sketch**: Key components (frontend, API, model, data store, vector DB?)\n5. **Data requirements**: What data is needed? Is it available?\n6. **Risk assessment**: Top 3 risks (hallucination, latency, cost, privacy)\n7. **Success metrics**: How do you measure if it's working?\n8. **Build vs buy**: What to build custom vs use existing services?\n\nBe specific and opinionated — not generic.",
+    "role": "Product Manager",
+    "category": "Strategy"
+  }
+]

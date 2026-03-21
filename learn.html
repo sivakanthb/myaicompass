@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn AI — AI Compass</title>
+  <meta name="description" content="Curated learning paths for AI — from foundations to agents, RAG, safety, and production deployment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">🧭 AI Compass</a>
+      <div class="nav-links">
+        <a href="index.html">Tools</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="prompts.html">Prompts</a>
+        <a href="trends.html">Trends</a>
+        <a href="learn.html" class="active">Learn</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="page-hero">
+    <div class="container">
+      <h1>🎓 Learning Paths</h1>
+      <p class="page-sub">Curated resources to go from AI-curious to AI-proficient — free, structured, and hands-on.</p>
+      <div class="page-search">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="learnSearch" placeholder="Search resources…" autocomplete="off" />
+      </div>
+      <div class="page-filter-bar" id="topicFilters"></div>
+    </div>
+  </header>
+
+  <!-- ===== COUNT ===== -->
+  <p class="page-count" id="learnCount"></p>
+
+  <!-- ===== GRID ===== -->
+  <main class="container">
+    <div class="learn-grid" id="learnGrid"></div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 AI Tools Catalog &middot; Built by <a href="https://sivakanth.vercel.app" target="_blank" rel="noopener noreferrer">Sivakanth Badigenchala</a></p>
+      <p class="footer-sub">Inspired by <a href="https://airise.vercel.app" target="_blank" rel="noopener noreferrer">AiRISE</a></p>
+    </div>
+  </footer>
+
+  <script>
+    /* Nav toggle */
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    let resources = [];
+    let activeTopic = 'all';
+
+    /* Topic order for display */
+    const topicOrder = ['Foundations', 'Prompt Engineering', 'AI Agents', 'RAG & Embeddings', 'AI Safety & Ethics', 'MLOps & Deployment', 'Building AI Apps'];
+
+    /* Level badge colors */
+    const levelColors = {
+      'Beginner':     { bg: '#ecfdf5', color: '#059669' },
+      'Intermediate': { bg: '#eef2ff', color: '#4f46e5' },
+      'Advanced':     { bg: '#fef2f2', color: '#dc2626' }
+    };
+
+    /* Format icons */
+    const formatIcons = {
+      'Course': '📚',
+      'Short Course': '⚡',
+      'Video Series': '🎥',
+      'Documentation': '📄',
+      'Guide': '📖',
+      'Article': '📝'
+    };
+
+    fetch('learn.json')
+      .then(r => r.json())
+      .then(data => { resources = data; buildFilters(); render(); });
+
+    function buildFilters() {
+      const bar = document.getElementById('topicFilters');
+      bar.innerHTML = `<button class="filter-chip active" data-topic="all">All Topics</button>` +
+        topicOrder.map(t => `<button class="filter-chip" data-topic="${t}">${t}</button>`).join('');
+      bar.addEventListener('click', e => {
+        const chip = e.target.closest('.filter-chip');
+        if (!chip) return;
+        bar.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+        chip.classList.add('active');
+        activeTopic = chip.dataset.topic;
+        render();
+      });
+    }
+
+    function render() {
+      const q = document.getElementById('learnSearch').value.toLowerCase().trim();
+      const filtered = resources.filter(r => {
+        const matchTopic = activeTopic === 'all' || r.topic === activeTopic;
+        const matchQ = !q || r.title.toLowerCase().includes(q) || r.description.toLowerCase().includes(q) || r.provider.toLowerCase().includes(q);
+        return matchTopic && matchQ;
+      });
+
+      /* Group by topic */
+      const grouped = {};
+      topicOrder.forEach(t => { grouped[t] = []; });
+      filtered.forEach(r => {
+        if (!grouped[r.topic]) grouped[r.topic] = [];
+        grouped[r.topic].push(r);
+      });
+
+      document.getElementById('learnCount').textContent = `Showing ${filtered.length} of ${resources.length} resources`;
+
+      const grid = document.getElementById('learnGrid');
+
+      if (activeTopic !== 'all') {
+        /* Single topic — flat grid */
+        grid.innerHTML = filtered.map(cardHtml).join('');
+      } else {
+        /* All topics — grouped sections */
+        grid.innerHTML = topicOrder
+          .filter(t => grouped[t] && grouped[t].length > 0)
+          .map(t => `
+            <div class="learn-topic-section">
+              <h2 class="learn-topic-heading">${t}</h2>
+              <div class="learn-topic-grid">${grouped[t].map(cardHtml).join('')}</div>
+            </div>`).join('');
+      }
+    }
+
+    function cardHtml(r) {
+      const lc = levelColors[r.level] || { bg: '#f3f4f6', color: '#6b7280' };
+      const icon = formatIcons[r.format] || '📄';
+      return `
+        <a href="${escapeAttr(r.url)}" target="_blank" rel="noopener noreferrer" class="learn-card">
+          <div class="learn-card-header">
+            <span class="learn-format">${icon} ${escapeHtml(r.format)}</span>
+            <span class="learn-level" style="background:${lc.bg};color:${lc.color}">${escapeHtml(r.level)}</span>
+          </div>
+          <h3>${escapeHtml(r.title)}</h3>
+          <p>${escapeHtml(r.description)}</p>
+          <div class="learn-card-footer">
+            <span class="learn-provider">${escapeHtml(r.provider)}</span>
+            <span class="learn-duration">⏱ ${escapeHtml(r.duration)}</span>
+          </div>
+        </a>`;
+    }
+
+    function escapeHtml(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
+    function escapeAttr(str) {
+      return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    document.getElementById('learnSearch').addEventListener('input', render);
+  </script>
+</body>
+</html>

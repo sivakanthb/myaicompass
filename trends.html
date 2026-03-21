@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Trends — AI Compass</title>
+  <meta name="description" content="Stay current with the latest AI trends, breakthroughs, and industry shifts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">🧭 AI Compass</a>
+      <div class="nav-links">
+        <a href="index.html">Tools</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="prompts.html">Prompts</a>
+        <a href="trends.html" class="active">Trends</a>
+        <a href="learn.html">Learn</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="page-hero">
+    <div class="container">
+      <h1>📈 AI Trends</h1>
+      <p class="page-sub">The latest breakthroughs and shifts shaping the AI landscape.</p>
+      <div class="page-filter-bar" id="trendFilters"></div>
+    </div>
+  </header>
+
+  <!-- ===== COUNT ===== -->
+  <p class="page-count" id="trendCount"></p>
+
+  <!-- ===== LIST ===== -->
+  <main class="container">
+    <div class="trends-list" id="trendsList"></div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 AI Tools Catalog &middot; Built by <a href="https://sivakanth.vercel.app" target="_blank" rel="noopener noreferrer">Sivakanth Badigenchala</a></p>
+      <p class="footer-sub">Inspired by <a href="https://airise.vercel.app" target="_blank" rel="noopener noreferrer">AiRISE</a></p>
+    </div>
+  </footer>
+
+  <script>
+    /* Nav toggle */
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    let trends = [];
+    let activeCat = 'all';
+
+    fetch('trends.json')
+      .then(r => r.json())
+      .then(data => { trends = data; buildFilters(); render(); });
+
+    function buildFilters() {
+      const cats = [...new Set(trends.map(t => t.category))].sort();
+      const bar = document.getElementById('trendFilters');
+      bar.innerHTML = `<button class="filter-chip active" data-cat="all">All</button>` +
+        cats.map(c => `<button class="filter-chip" data-cat="${c}">${c}</button>`).join('');
+      bar.addEventListener('click', e => {
+        const chip = e.target.closest('.filter-chip');
+        if (!chip) return;
+        bar.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+        chip.classList.add('active');
+        activeCat = chip.dataset.cat;
+        render();
+      });
+    }
+
+    function render() {
+      const filtered = trends.filter(t => activeCat === 'all' || t.category === activeCat)
+        .sort((a, b) => b.date.localeCompare(a.date));
+
+      document.getElementById('trendCount').textContent = `Showing ${filtered.length} of ${trends.length} trends`;
+
+      const fmt = d => new Date(d + '-01').toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+
+      document.getElementById('trendsList').innerHTML = filtered.map(t => `
+        <div class="trend-card">
+          <h3>${escapeHtml(t.title)}</h3>
+          <p>${escapeHtml(t.summary)}</p>
+          <div class="trend-meta">
+            <span class="trend-tag cat">${escapeHtml(t.category)}</span>
+            <span class="trend-tag impact-${t.impact.toLowerCase()}">${escapeHtml(t.impact)} Impact</span>
+            <span class="trend-tag date">📅 ${fmt(t.date)}</span>
+            ${t.source ? `<span class="trend-tag source">🔗 ${escapeHtml(t.source)}</span>` : ''}
+          </div>
+        </div>`).join('');
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>

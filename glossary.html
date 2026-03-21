@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Glossary — AI Compass</title>
+  <meta name="description" content="A curated glossary of key AI terms, concepts, and jargon — from transformers to RAG." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">🧭 AI Compass</a>
+      <div class="nav-links">
+        <a href="index.html">Tools</a>
+        <a href="glossary.html" class="active">Glossary</a>
+        <a href="prompts.html">Prompts</a>
+        <a href="trends.html">Trends</a>
+        <a href="learn.html">Learn</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="page-hero">
+    <div class="container">
+      <h1>📖 AI Glossary</h1>
+      <p class="page-sub">Key terms and concepts every AI practitioner should know.</p>
+      <div class="page-search">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="glossarySearch" placeholder="Search terms…" autocomplete="off" />
+      </div>
+      <div class="page-filter-bar" id="glossaryCats"></div>
+    </div>
+  </header>
+
+  <!-- ===== COUNT ===== -->
+  <p class="page-count" id="glossaryCount"></p>
+
+  <!-- ===== GRID ===== -->
+  <main class="container">
+    <div class="glossary-grid" id="glossaryGrid"></div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 AI Tools Catalog &middot; Built by <a href="https://sivakanth.vercel.app" target="_blank" rel="noopener noreferrer">Sivakanth Badigenchala</a></p>
+      <p class="footer-sub">Inspired by <a href="https://airise.vercel.app" target="_blank" rel="noopener noreferrer">AiRISE</a></p>
+    </div>
+  </footer>
+
+  <script>
+    /* Nav toggle */
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    let terms = [];
+    let activeCat = 'all';
+
+    fetch('glossary.json')
+      .then(r => r.json())
+      .then(data => { terms = data; buildFilters(); render(); });
+
+    function buildFilters() {
+      const cats = [...new Set(terms.map(t => t.category))].sort();
+      const bar = document.getElementById('glossaryCats');
+      bar.innerHTML = `<button class="filter-chip active" data-cat="all">All</button>` +
+        cats.map(c => `<button class="filter-chip" data-cat="${c}">${c}</button>`).join('');
+      bar.addEventListener('click', e => {
+        const chip = e.target.closest('.filter-chip');
+        if (!chip) return;
+        bar.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+        chip.classList.add('active');
+        activeCat = chip.dataset.cat;
+        render();
+      });
+    }
+
+    function render() {
+      const q = document.getElementById('glossarySearch').value.toLowerCase().trim();
+      const filtered = terms.filter(t => {
+        const matchCat = activeCat === 'all' || t.category === activeCat;
+        const matchQ = !q || t.term.toLowerCase().includes(q) || t.definition.toLowerCase().includes(q);
+        return matchCat && matchQ;
+      }).sort((a, b) => a.term.localeCompare(b.term));
+
+      document.getElementById('glossaryCount').textContent = `Showing ${filtered.length} of ${terms.length} terms`;
+      document.getElementById('glossaryGrid').innerHTML = filtered.map(t => `
+        <div class="glossary-card">
+          <span class="glossary-tag">${t.category}</span>
+          <h3>${highlight(t.term, q)}</h3>
+          <p>${highlight(t.definition, q)}</p>
+        </div>`).join('');
+    }
+
+    function highlight(text, q) {
+      if (!q) return text;
+      const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return text.replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
+    }
+
+    document.getElementById('glossarySearch').addEventListener('input', render);
+  </script>
+</body>
+</html>
