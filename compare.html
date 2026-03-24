@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compare Tools — AI Compass</title>
+  <meta name="description" content="Compare AI tools side-by-side — maturity, personas, purpose, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">🧭 AI Compass</a>
+      <div class="nav-links">
+        <a href="index.html">Tools</a>
+        <a href="compare.html" class="active">Compare</a>
+        <a href="stack.html">Build Stack</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="prompts.html">Prompts</a>
+        <a href="trends.html">Trends</a>
+        <a href="learn.html">Learn</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="page-hero">
+    <h1>⚖️ Compare Tools</h1>
+    <p class="page-sub">Pick up to 3 tools and compare them side-by-side.</p>
+  </header>
+
+  <!-- ===== PICKER ===== -->
+  <section class="container compare-picker">
+    <div class="picker-slots" id="pickerSlots">
+      <div class="picker-slot" data-slot="0">
+        <select class="picker-select" data-slot="0">
+          <option value="">Select tool…</option>
+        </select>
+      </div>
+      <div class="picker-slot" data-slot="1">
+        <select class="picker-select" data-slot="1">
+          <option value="">Select tool…</option>
+        </select>
+      </div>
+      <div class="picker-slot" data-slot="2">
+        <select class="picker-select" data-slot="2">
+          <option value="">Select tool…</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPARE TABLE ===== -->
+  <section class="container">
+    <div class="compare-table-wrap" id="compareTableWrap">
+      <p class="compare-empty" id="compareEmpty">Select at least 2 tools above to compare them.</p>
+      <table class="compare-table hidden" id="compareTable">
+        <thead id="compareHead"></thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 AI Compass &middot; Built by <a href="https://sivakanth.vercel.app" target="_blank" rel="noopener noreferrer">Sivakanth Badigenchala</a></p>
+      <p class="footer-sub">Part of the AI Lab: <a href="https://myaivantage.vercel.app" target="_blank" rel="noopener noreferrer">AI Vantage</a> &middot; <a href="https://aimorpheus.vercel.app" target="_blank" rel="noopener noreferrer">AIMorpheus</a> &middot; <a href="https://airise.vercel.app" target="_blank" rel="noopener noreferrer">AiRISE</a></p>
+    </div>
+  </footer>
+
+  <script>
+  /* ── Mobile nav ── */
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.querySelector(".nav-links");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(a =>
+      a.addEventListener("click", () => navLinks.classList.remove("open"))
+    );
+  }
+
+  /* ── Data ── */
+  let tools = [];
+  const selects = document.querySelectorAll(".picker-select");
+  const compareTable = document.getElementById("compareTable");
+  const compareHead = document.getElementById("compareHead");
+  const compareBody = document.getElementById("compareBody");
+  const compareEmpty = document.getElementById("compareEmpty");
+
+  /* ── Init ── */
+  async function init() {
+    const res = await fetch("tools.json");
+    tools = await res.json();
+    tools.sort((a, b) => a.name.localeCompare(b.name));
+
+    selects.forEach(sel => {
+      tools.forEach((t, i) => {
+        const opt = document.createElement("option");
+        opt.value = i;
+        opt.textContent = t.name;
+        sel.appendChild(opt);
+      });
+      sel.addEventListener("change", renderComparison);
+    });
+  }
+
+  /* ── Helpers ── */
+  function esc(str) {
+    const el = document.createElement("span");
+    el.textContent = str;
+    return el.innerHTML;
+  }
+
+  function maturityLabel(level) {
+    const labels = ["", "Emerging", "Growing", "Established", "Mature", "Mainstream"];
+    let dots = "";
+    for (let i = 1; i <= 5; i++) {
+      dots += `<span class="maturity-dot${i <= level ? " filled" : ""}"></span>`;
+    }
+    return `<div class="maturity"><div class="maturity-dots">${dots}</div> ${labels[level] || ""}</div>`;
+  }
+
+  /* ── Render ── */
+  function renderComparison() {
+    const selected = [...selects]
+      .map(s => s.value ? tools[parseInt(s.value)] : null)
+      .filter(Boolean);
+
+    if (selected.length < 2) {
+      compareTable.classList.add("hidden");
+      compareEmpty.classList.remove("hidden");
+      return;
+    }
+
+    compareTable.classList.remove("hidden");
+    compareEmpty.classList.add("hidden");
+
+    /* Header row */
+    compareHead.innerHTML = `<tr>
+      <th class="compare-label-col">Attribute</th>
+      ${selected.map(t => `<th>${esc(t.name)}</th>`).join("")}
+    </tr>`;
+
+    /* Data rows */
+    const rows = [
+      { label: "Category", key: t => esc(t.category) },
+      { label: "Type", key: t => `<span class="card-type">${esc(t.type)}</span>` },
+      { label: "Purpose", key: t => `<span class="tag tag-purpose">${esc(t.purpose)}</span>` },
+      { label: "Use Case", key: t => `<span class="tag">${esc(t.useCase)}</span>` },
+      { label: "Maturity", key: t => maturityLabel(t.maturity) },
+      { label: "Personas", key: t => t.personas.map(p => `<span class="persona-badge" data-persona="${esc(p)}">${esc(p)}</span>`).join(" ") },
+      { label: "Description", key: t => `<span class="compare-desc">${esc(t.description)}</span>` },
+      { label: "Link", key: t => `<a class="card-link" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer">Visit</a>` },
+    ];
+
+    compareBody.innerHTML = rows.map(r => `
+      <tr>
+        <td class="compare-label-col">${r.label}</td>
+        ${selected.map(t => `<td>${r.key(t)}</td>`).join("")}
+      </tr>
+    `).join("");
+  }
+
+  init();
+  </script>
+</body>
+</html>
