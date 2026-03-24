@@ -57,10 +57,10 @@
   {
     "name": "Cursor",
     "category": "Developer Tools",
-    "description": "AI-first code editor built for pair-programming with large language models.",
+    "description": "AI-first code editor for vibe coding — describe what you want in natural language and the AI writes, edits, and refactors your codebase conversationally.",
     "type": "Tool",
     "useCase": "Dev",
-    "purpose": "Code & Development",
+    "purpose": "Vibe Coding",
     "personas": ["Developer", "Architect"],
     "maturity": 4,
     "url": "https://www.cursor.com"
@@ -431,10 +431,10 @@
   {
     "name": "Windsurf (Codeium)",
     "category": "Developer Tools",
-    "description": "AI-powered code editor with free tier — offers code completion, chat, and agent capabilities for building software faster.",
+    "description": "AI-powered code editor for vibe coding — describe features in natural language and the autonomous AI agent writes, runs, and iterates on your code.",
     "type": "Tool",
-    "useCase": "Development",
-    "purpose": "Code Generation",
+    "useCase": "Dev",
+    "purpose": "Vibe Coding",
     "personas": ["Developer", "Architect"],
     "maturity": 4,
     "url": "https://codeium.com/windsurf"
@@ -444,7 +444,7 @@
     "category": "LLMs & Models",
     "description": "Run open-source LLMs locally on your machine — Llama, Mistral, Phi, and more. No cloud, no API key, full privacy.",
     "type": "Tool",
-    "useCase": "Development",
+    "useCase": "Dev",
     "purpose": "Model Inference",
     "personas": ["Developer", "Architect", "Researcher", "Data Engineer"],
     "maturity": 4,
@@ -453,10 +453,10 @@
   {
     "name": "v0 by Vercel",
     "category": "Developer Tools",
-    "description": "AI-powered UI generator — describe a component or page in natural language and get production-ready React/Tailwind code instantly.",
+    "description": "AI-powered UI generator — describe a component or page in natural language and get production-ready React/Tailwind code instantly. The gateway drug to vibe coding.",
     "type": "Tool",
     "useCase": "Design",
-    "purpose": "Code Generation",
+    "purpose": "Vibe Coding",
     "personas": ["Developer", "Designer", "Product Owner"],
     "maturity": 3,
     "url": "https://v0.dev"
@@ -464,21 +464,21 @@
   {
     "name": "Replit",
     "category": "Developer Tools",
-    "description": "Cloud-based IDE with built-in AI assistant — write, run, and deploy code from your browser with AI help at every step.",
+    "description": "Cloud IDE with AI agent — describe your app idea and Replit Agent builds, previews, and deploys it from your browser. No local setup needed.",
     "type": "Platform",
-    "useCase": "Development",
-    "purpose": "Code Generation",
-    "personas": ["Developer", "Educator"],
+    "useCase": "Dev",
+    "purpose": "Vibe Coding",
+    "personas": ["Developer", "Educator", "Product Owner"],
     "maturity": 4,
     "url": "https://replit.com"
   },
   {
     "name": "Bolt.new",
     "category": "Developer Tools",
-    "description": "AI-powered full-stack app builder — describe your app idea and get a working prototype deployed in minutes, entirely in the browser.",
+    "description": "AI-powered full-stack app builder — describe your app idea and get a working prototype deployed in minutes, entirely in the browser. Pure vibe coding.",
     "type": "Tool",
-    "useCase": "Development",
-    "purpose": "App Building",
+    "useCase": "Dev",
+    "purpose": "Vibe Coding",
     "personas": ["Developer", "Product Owner", "Designer"],
     "maturity": 3,
     "url": "https://bolt.new"
@@ -576,7 +576,7 @@
     "category": "LLMs & Models",
     "description": "Desktop app for running open-source LLMs locally with a ChatGPT-like interface — discover, download, and chat with models offline.",
     "type": "Tool",
-    "useCase": "Development",
+    "useCase": "Dev",
     "purpose": "Model Inference",
     "personas": ["Developer", "Researcher"],
     "maturity": 3,
@@ -592,5 +592,27 @@
     "personas": ["Researcher", "Educator", "Marketing", "Executive"],
     "maturity": 3,
     "url": "https://www.perplexity.ai/pages"
+  },
+  {
+    "name": "Lovable",
+    "category": "Developer Tools",
+    "description": "AI-powered full-stack app builder — describe your idea in plain English and get a working, deployable app with frontend, backend, and database. Formerly GPT Engineer.",
+    "type": "Platform",
+    "useCase": "Dev",
+    "purpose": "Vibe Coding",
+    "personas": ["Developer", "Product Owner", "Designer", "Marketing"],
+    "maturity": 3,
+    "url": "https://lovable.dev"
+  },
+  {
+    "name": "Devin",
+    "category": "AI Agents & Automation",
+    "description": "Autonomous AI software engineer by Cognition — handles complex coding tasks end-to-end, from planning and implementation to debugging and deployment.",
+    "type": "Platform",
+    "useCase": "Dev",
+    "purpose": "Vibe Coding",
+    "personas": ["Developer", "Architect", "Product Owner"],
+    "maturity": 3,
+    "url": "https://devin.ai"
   }
 ]
