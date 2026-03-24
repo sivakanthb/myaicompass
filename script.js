@@ -168,8 +168,13 @@ function getFilteredTools() {
   const purpose  = purposeFilter.value;
 
   return tools.filter((t) => {
-    // Text search: match name or description
-    if (query && !t.name.toLowerCase().includes(query) && !t.description.toLowerCase().includes(query)) {
+    // Text search: match name, description, category, purpose, or personas
+    if (query && !t.name.toLowerCase().includes(query)
+              && !t.description.toLowerCase().includes(query)
+              && !t.category.toLowerCase().includes(query)
+              && !t.purpose.toLowerCase().includes(query)
+              && !t.useCase.toLowerCase().includes(query)
+              && !t.personas.some(p => p.toLowerCase().includes(query))) {
       return false;
     }
     if (category !== "all" && t.category !== category) return false;
