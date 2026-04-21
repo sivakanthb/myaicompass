@@ -226,5 +226,35 @@
     "category": "Getting Started",
     "question": "How do I get my first AI project live in under an hour?",
     "answer": "Follow this path: (1) Open VS Code with GitHub Copilot installed, (2) Create a new folder and open it, (3) Ask Copilot Chat to generate a simple web app (e.g., 'Create an AI glossary page with search'), (4) Review and adjust the generated HTML/CSS/JS files, (5) Test locally with Live Server extension, (6) Run 'npm i -g vercel' then 'vercel' in the terminal, (7) Follow the prompts — your app is live. For AI API integration, add your API key as a Vercel environment variable and use fetch() to call the API."
+  },
+  {
+    "id": 39,
+    "category": "AI Fundamentals",
+    "question": "What are reasoning models and why do they matter?",
+    "answer": "Reasoning models (OpenAI o1/o3, DeepSeek R1, Gemini 2.5 Pro) are AI models trained to 'think' step-by-step before answering. Instead of generating the first plausible response, they spend extra compute to plan, reason, and verify their work — similar to how a human would work through a complex problem. They dramatically outperform standard models on math, coding, science, and logic tasks. The trade-off is they're slower and more expensive per query. Use reasoning models for complex, accuracy-critical tasks; use standard models for fast, routine tasks."
+  },
+  {
+    "id": 40,
+    "category": "AI Fundamentals",
+    "question": "What is context engineering and why is it replacing prompt engineering?",
+    "answer": "Context engineering is the practice of carefully designing everything that goes into an AI model's context — not just the prompt, but also retrieved documents, conversation history, tool outputs, system instructions, and memory. While prompt engineering focuses on crafting a single instruction, context engineering is about orchestrating the full information environment the model works within. As models get smarter, the bottleneck shifts from 'how you ask' to 'what information you provide.' It's the key skill for building production AI systems."
+  },
+  {
+    "id": 41,
+    "category": "AI Tools & Ecosystem",
+    "question": "What is DeepSeek and why did it disrupt the AI industry?",
+    "answer": "DeepSeek is a Chinese AI lab that released open-source models matching GPT-4 level performance — at a fraction of the training cost. DeepSeek R1 is a reasoning model that rivals o1 on math and coding benchmarks while being fully open-weight and runnable locally. It disrupted the industry by proving that frontier AI doesn't require billions in compute spend, challenging the dominance of US-based AI labs and accelerating open-source AI adoption globally."
+  },
+  {
+    "id": 42,
+    "category": "Vibe Coding & Setup",
+    "question": "What is AI Agent Mode in coding assistants?",
+    "answer": "Agent Mode is a feature in AI coding tools (Copilot, Cursor, Windsurf) where the AI autonomously plans and executes multi-step coding tasks. Instead of suggesting one completion at a time, Agent Mode can: (1) Read your codebase to understand the structure, (2) Plan the changes needed across multiple files, (3) Write, edit, and create files, (4) Run terminal commands and tests, (5) Fix errors and iterate. You describe the goal, and the agent works through it — you review and approve the changes."
+  },
+  {
+    "id": 43,
+    "category": "Security & Governance",
+    "question": "What is AI observability and why does it matter in production?",
+    "answer": "AI observability is monitoring your AI systems in production to ensure they work correctly, efficiently, and safely. Key metrics to track: (1) Latency — how fast are responses? (2) Token usage and cost — are you within budget? (3) Output quality — are responses accurate and helpful? (4) Hallucination rate — how often does the AI fabricate information? (5) Error rates — are API calls failing? (6) User satisfaction — are users finding value? Tools like Langfuse, LangSmith, and Weights & Biases provide dashboards for these metrics. Without observability, you're flying blind."
   }
 ]

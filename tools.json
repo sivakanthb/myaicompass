@@ -724,5 +724,104 @@
     "personas": ["Designer", "Developer", "Researcher"],
     "maturity": 4,
     "url": "https://stability.ai"
+  },
+  {
+    "name": "DeepSeek",
+    "category": "LLMs & Models",
+    "description": "Open-source reasoning-focused AI models from China — DeepSeek R1 rivals GPT-4 on math and coding benchmarks at a fraction of the cost, with open weights.",
+    "type": "Model",
+    "useCase": "Dev",
+    "purpose": "Research & Analysis",
+    "personas": ["Developer", "Researcher", "Architect", "Data Engineer"],
+    "maturity": 4,
+    "url": "https://www.deepseek.com"
+  },
+  {
+    "name": "Mistral AI",
+    "category": "LLMs & Models",
+    "description": "European AI lab building efficient open-source and commercial models — Mistral Large and Mixtral deliver strong performance with smaller footprints.",
+    "type": "Model",
+    "useCase": "Dev",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Architect", "Researcher"],
+    "maturity": 4,
+    "url": "https://mistral.ai"
+  },
+  {
+    "name": "Groq",
+    "category": "AI Platforms",
+    "description": "Ultra-fast AI inference platform using custom LPU hardware — delivers 10x faster token generation than GPU-based providers for real-time AI applications.",
+    "type": "Platform",
+    "useCase": "Dev",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Architect", "DevOps"],
+    "maturity": 3,
+    "url": "https://groq.com"
+  },
+  {
+    "name": "Together AI",
+    "category": "AI Platforms",
+    "description": "Cloud platform for running open-source AI models — fast inference, fine-tuning, and custom model training at lower cost than proprietary alternatives.",
+    "type": "Platform",
+    "useCase": "Dev",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Data Engineer", "Architect"],
+    "maturity": 3,
+    "url": "https://www.together.ai"
+  },
+  {
+    "name": "Unstructured",
+    "category": "Knowledge & Search",
+    "description": "Data preprocessing platform for AI — extract, clean, and chunk text from PDFs, HTML, images, and Office docs for RAG pipelines and LLM applications.",
+    "type": "Tool",
+    "useCase": "Data",
+    "purpose": "Search & Retrieval",
+    "personas": ["Developer", "Data Engineer", "Architect"],
+    "maturity": 3,
+    "url": "https://unstructured.io"
+  },
+  {
+    "name": "Qdrant",
+    "category": "Knowledge & Search",
+    "description": "High-performance open-source vector database — optimized for similarity search with filtering, built in Rust for speed and reliability in production RAG systems.",
+    "type": "Platform",
+    "useCase": "Data",
+    "purpose": "Search & Retrieval",
+    "personas": ["Developer", "Data Engineer", "Architect"],
+    "maturity": 3,
+    "url": "https://qdrant.tech"
+  },
+  {
+    "name": "Whisper",
+    "category": "LLMs & Models",
+    "description": "OpenAI's open-source speech recognition model — transcribe and translate audio in 99 languages with remarkable accuracy, run locally or via API.",
+    "type": "Model",
+    "useCase": "Data",
+    "purpose": "Audio & Podcasts",
+    "personas": ["Developer", "Researcher", "Educator", "Marketing"],
+    "maturity": 4,
+    "url": "https://openai.com/research/whisper"
+  },
+  {
+    "name": "LangSmith",
+    "category": "MLOps & Deployment",
+    "description": "LangChain's platform for debugging, testing, evaluating, and monitoring LLM applications — trace every step of your AI pipeline with detailed observability.",
+    "type": "Platform",
+    "useCase": "Ops",
+    "purpose": "Deployment & Monitoring",
+    "personas": ["Developer", "DevOps", "Architect"],
+    "maturity": 3,
+    "url": "https://smith.langchain.com"
+  },
+  {
+    "name": "Haystack",
+    "category": "Prompt Engineering & Orchestration",
+    "description": "Open-source framework by deepset for building production-ready RAG pipelines, semantic search, and question answering systems with modular components.",
+    "type": "Framework",
+    "useCase": "Dev",
+    "purpose": "Search & Retrieval",
+    "personas": ["Developer", "Data Engineer", "Architect"],
+    "maturity": 3,
+    "url": "https://haystack.deepset.ai"
   }
 ]
