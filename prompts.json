@@ -154,5 +154,29 @@
     "prompt": "Create a lesson plan that uses AI tools as part of the learning experience:\n\n**Subject**: [topic to teach]\n**Audience**: [grade level / professional training / self-learners]\n**Duration**: [30 min / 1 hour / multi-session]\n**AI tools available**: [ChatGPT, Copilot, image generators, etc.]\n\n**Generate:**\n1. **Learning objectives**: What students will know/do after the lesson\n2. **Warm-up** (5 min): Engaging hook question or demo\n3. **Instruction** (15 min): Core concepts with AI-assisted examples\n4. **Hands-on activity** (20 min): Students use AI tools to complete a task\n5. **Reflection** (10 min): Critical thinking — what did AI get right/wrong?\n6. **Assessment**: How to evaluate learning (not just AI output quality)\n\nInclude specific AI prompts students should try, and questions that develop critical thinking about AI outputs.",
     "role": "Educator",
     "category": "Teaching"
+  },
+  {
+    "title": "API Key & Token Security Audit",
+    "prompt": "Audit my project for API key and token security vulnerabilities:\n\n**Project type**: [web app / CLI tool / AI pipeline / microservice]\n**Languages/Frameworks**: [e.g., Python/FastAPI, Node.js/Express]\n**Deployment platform**: [Vercel, AWS, Azure, etc.]\n**AI services used**: [OpenAI, Anthropic, GitHub, etc.]\n\n**Check for:**\n1. **Hardcoded secrets**: Are any API keys, PATs, or tokens in source code?\n2. **Environment variables**: Are secrets properly loaded from .env or secrets managers?\n3. **Git history**: Could secrets have been committed and pushed previously?\n4. **.gitignore**: Is .env properly excluded from version control?\n5. **Client-side exposure**: Are any secrets exposed in frontend JavaScript or HTML?\n6. **Token scoping**: Do PATs and API keys follow least-privilege principles?\n7. **Rotation policy**: Is there a process for rotating expired tokens?\n8. **Logging**: Are secrets accidentally logged or included in error messages?\n\nFor each finding, rate severity (Critical/High/Medium/Low) and provide the fix.",
+    "role": "Developer",
+    "category": "Security"
+  },
+  {
+    "title": "AI System Architecture Reviewer",
+    "prompt": "Review this AI system architecture for completeness, scalability, and security:\n\n**System description**: [describe what the AI system does]\n**Current architecture**: [describe components — model, API, database, frontend, etc.]\n**Scale**: [requests per day, users, data volume]\n**Budget**: [low / medium / high]\n\n**Evaluate:**\n1. **Model selection**: Is the chosen model appropriate? Should you use a smaller/larger model?\n2. **Latency**: Where are the bottlenecks? Can you add caching, streaming, or batching?\n3. **Cost**: What's the estimated monthly cost? Where can you optimize?\n4. **Security**: Are API keys secure? Is input validated? Are outputs filtered?\n5. **Reliability**: What happens when the AI service is down? Fallback strategies?\n6. **Observability**: How do you monitor quality, latency, cost, and errors?\n7. **Scalability**: Will this architecture handle 10x growth?\n\nProvide a revised architecture diagram (text-based) and a prioritized list of improvements.",
+    "role": "Architect",
+    "category": "Architecture"
+  },
+  {
+    "title": "MCP Server Implementation Guide",
+    "prompt": "I want to build an MCP (Model Context Protocol) server for [use case].\n\n**Data source**: [database, API, file system, SaaS tool, etc.]\n**Language**: [Python / TypeScript]\n**Target AI clients**: [GitHub Copilot, Claude Desktop, Cursor, etc.]\n\n**Generate:**\n1. **Server setup**: Boilerplate MCP server with proper transport (stdio/SSE)\n2. **Tools**: Define 3-5 tools the AI can call, each with:\n   - Name, description, and input schema (JSON Schema)\n   - Implementation that queries the data source\n   - Error handling and validation\n3. **Resources**: Define any static resources the AI should have access to\n4. **Security**: Input validation, rate limiting, and authentication\n5. **Testing**: How to test the MCP server locally\n6. **Deployment**: How to register it with the target AI client\n\nProvide complete, runnable code with comments.",
+    "role": "Developer",
+    "category": "Agent Design"
+  },
+  {
+    "title": "AI Readiness Assessment for Teams",
+    "prompt": "Conduct an AI readiness assessment for my team/organization:\n\n**Team size**: [number]\n**Industry**: [industry]\n**Current AI usage**: [none / ad-hoc / some tools / systematic]\n**Technical maturity**: [non-technical / mixed / technical]\n\n**Assess across these dimensions (rate 1-5 for each):**\n1. **Data readiness**: Is data organized, accessible, and clean enough for AI?\n2. **Tool adoption**: Are team members using AI tools (Copilot, ChatGPT, etc.)?\n3. **Skill level**: Does the team understand AI concepts, prompting, and limitations?\n4. **Governance**: Are there policies for AI usage, data privacy, and approved tools?\n5. **Infrastructure**: Are APIs, secrets management, and deployment pipelines ready?\n6. **Culture**: Is leadership supportive? Is there psychological safety to experiment?\n7. **Use cases**: Have high-value AI use cases been identified and prioritized?\n\n**Output:**\n- Radar chart data (dimension scores)\n- Top 3 strengths and top 3 gaps\n- 30/60/90 day action plan with specific recommendations\n- Quick wins the team can implement this week",
+    "role": "Executive",
+    "category": "Strategy"
   }
 ]

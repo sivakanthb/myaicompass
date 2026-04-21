@@ -184,5 +184,47 @@
     "category": "Vibe Coding & Setup",
     "question": "What's the difference between running AI locally vs in the cloud?",
     "answer": "Cloud AI (ChatGPT, Claude API) runs on remote servers — easy to use, no hardware needed, but requires internet and sends data to a third party. Local AI (Ollama, LM Studio) runs models on your own machine — full privacy, works offline, but needs a decent GPU (8GB+ VRAM) and models are usually smaller/less capable than cloud versions. Use cloud for best quality and convenience; use local for privacy-sensitive work, offline access, or experimentation. Many developers use both depending on the task."
+  },
+  {
+    "id": 32,
+    "category": "Security & Governance",
+    "question": "What is the difference between a PAT (Personal Access Token) and an API Key?",
+    "answer": "A PAT (Personal Access Token) authenticates you as a user on platforms like GitHub — it acts on your behalf with specific scoped permissions (read repos, push code, manage issues). An API Key authenticates your application with an AI service (OpenAI, Anthropic, Google) — it identifies the app and tracks usage/billing. Both are secrets that should never be in source code. PATs are user-scoped and permission-based; API keys are service-scoped and usage-based."
+  },
+  {
+    "id": 33,
+    "category": "Security & Governance",
+    "question": "What is Shadow AI and why is it a risk?",
+    "answer": "Shadow AI is when employees use unauthorized AI tools (ChatGPT, Copilot, Claude) without IT or security team approval. Risks include: (1) Sensitive data pasted into public AI tools may be stored or used for training, (2) No audit trail of what data was shared, (3) Compliance violations (GDPR, HIPAA, SOC2), (4) Inconsistent AI outputs without governance, (5) Security vulnerabilities from unvetted tools. Organizations should establish an AI usage policy, provide approved AI tools, and educate employees on responsible AI use."
+  },
+  {
+    "id": 34,
+    "category": "AI Fundamentals",
+    "question": "What is the difference between a Large Language Model (LLM) and a Small Language Model (SLM)?",
+    "answer": "LLMs (GPT-4, Claude, Gemini) have hundreds of billions to trillions of parameters, run in the cloud, and offer the broadest capabilities. SLMs (Phi-3, Gemma 2, Llama 3.2 3B) have 1-7 billion parameters, can run on laptops and phones, and are optimized for specific tasks. SLMs trade some general capability for speed, privacy, lower cost, and offline use. Many organizations use both — SLMs for routine tasks and edge deployment, LLMs for complex reasoning and generation."
+  },
+  {
+    "id": 35,
+    "category": "AI Fundamentals",
+    "question": "What is RAG and why does every enterprise need it?",
+    "answer": "RAG (Retrieval-Augmented Generation) combines an LLM with a knowledge retrieval system. Instead of relying solely on training data, the model first searches your company's documents, databases, or wikis, then generates a response grounded in that real data. Benefits: (1) Reduces hallucinations with factual grounding, (2) No need to fine-tune expensive models, (3) Always uses the latest information, (4) Can cite sources for trust, (5) Keeps proprietary data private. It's the most practical pattern for enterprise AI today."
+  },
+  {
+    "id": 36,
+    "category": "AI Tools & Ecosystem",
+    "question": "What is the difference between Copilot, Cursor, and Windsurf for coding?",
+    "answer": "All three are AI coding assistants but with different approaches. GitHub Copilot is an extension that works inside your existing editor (VS Code, JetBrains) — best for inline completions, chat, and code review within your workflow. Cursor is a standalone AI-first code editor (VS Code fork) — best for conversational coding where you describe features and the AI writes across files. Windsurf (Codeium) is also a standalone AI editor — best for autonomous agent mode where it plans, writes, and runs code with minimal intervention. Choose based on how much AI control you want."
+  },
+  {
+    "id": 37,
+    "category": "GitHub & DevOps",
+    "question": "What are GitHub Actions and how are they used in AI projects?",
+    "answer": "GitHub Actions is a CI/CD automation platform built into GitHub. For AI projects, it's used to: (1) Run automated tests on every code push, (2) Validate model outputs against evaluation datasets, (3) Deploy AI applications to cloud services (Vercel, AWS, Azure), (4) Schedule periodic model retraining or data pipeline runs, (5) Run security scans and lint checks on AI code, (6) Automate PR reviews with AI-powered checks. Actions are defined in YAML files in your repo's .github/workflows/ folder."
+  },
+  {
+    "id": 38,
+    "category": "Getting Started",
+    "question": "How do I get my first AI project live in under an hour?",
+    "answer": "Follow this path: (1) Open VS Code with GitHub Copilot installed, (2) Create a new folder and open it, (3) Ask Copilot Chat to generate a simple web app (e.g., 'Create an AI glossary page with search'), (4) Review and adjust the generated HTML/CSS/JS files, (5) Test locally with Live Server extension, (6) Run 'npm i -g vercel' then 'vercel' in the terminal, (7) Follow the prompts — your app is live. For AI API integration, add your API key as a Vercel environment variable and use fetch() to call the API."
   }
 ]

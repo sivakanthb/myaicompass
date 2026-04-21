@@ -614,5 +614,115 @@
     "personas": ["Developer", "Architect", "Product Owner"],
     "maturity": 3,
     "url": "https://devin.ai"
+  },
+  {
+    "name": "OpenAI API",
+    "category": "AI Platforms",
+    "description": "Programmatic access to GPT-4, GPT-4o, DALL·E, Whisper, and embedding models — the most widely used AI API for building intelligent applications.",
+    "type": "Platform",
+    "useCase": "Dev",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Architect", "Data Engineer"],
+    "maturity": 5,
+    "url": "https://platform.openai.com"
+  },
+  {
+    "name": "Anthropic API",
+    "category": "AI Platforms",
+    "description": "API access to Claude models with extended thinking, tool use, and vision — designed for safety-critical enterprise applications and agentic workflows.",
+    "type": "Platform",
+    "useCase": "Dev",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Architect", "Data Engineer"],
+    "maturity": 4,
+    "url": "https://docs.anthropic.com"
+  },
+  {
+    "name": "LlamaIndex",
+    "category": "Prompt Engineering & Orchestration",
+    "description": "Data framework for building RAG applications — ingest, index, and query your data with LLMs using production-ready pipelines.",
+    "type": "Framework",
+    "useCase": "Dev",
+    "purpose": "Search & Retrieval",
+    "personas": ["Developer", "Data Engineer", "Architect"],
+    "maturity": 4,
+    "url": "https://www.llamaindex.ai"
+  },
+  {
+    "name": "Weaviate",
+    "category": "Knowledge & Search",
+    "description": "Open-source vector database for AI applications — supports semantic search, hybrid search, and generative search with built-in vectorization.",
+    "type": "Platform",
+    "useCase": "Data",
+    "purpose": "Search & Retrieval",
+    "personas": ["Developer", "Data Engineer", "Architect"],
+    "maturity": 4,
+    "url": "https://weaviate.io"
+  },
+  {
+    "name": "Chromadb",
+    "category": "Knowledge & Search",
+    "description": "Lightweight open-source embedding database — the fastest way to add semantic search and memory to AI applications with a simple Python/JS API.",
+    "type": "Platform",
+    "useCase": "Data",
+    "purpose": "Search & Retrieval",
+    "personas": ["Developer", "Data Engineer", "Researcher"],
+    "maturity": 3,
+    "url": "https://www.trychroma.com"
+  },
+  {
+    "name": "Langfuse",
+    "category": "MLOps & Deployment",
+    "description": "Open-source LLM observability platform — trace, evaluate, and monitor your AI applications with detailed analytics on cost, latency, and quality.",
+    "type": "Platform",
+    "useCase": "Ops",
+    "purpose": "Deployment & Monitoring",
+    "personas": ["Developer", "DevOps", "Architect"],
+    "maturity": 3,
+    "url": "https://langfuse.com"
+  },
+  {
+    "name": "Copilot Studio",
+    "category": "AI Agents & Automation",
+    "description": "Microsoft's low-code platform for building custom AI copilots and agents — integrates with M365, Dynamics, and enterprise data sources with built-in governance.",
+    "type": "Platform",
+    "useCase": "Enterprise",
+    "purpose": "Workflow Automation",
+    "personas": ["Product Owner", "Developer", "Executive", "Agile Coach"],
+    "maturity": 4,
+    "url": "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio"
+  },
+  {
+    "name": "OpenRouter",
+    "category": "AI Platforms",
+    "description": "Unified API gateway to access 100+ AI models (GPT-4, Claude, Llama, Mistral) through a single endpoint — compare models, optimize costs, and avoid vendor lock-in.",
+    "type": "Platform",
+    "useCase": "Dev",
+    "purpose": "Model Inference",
+    "personas": ["Developer", "Architect"],
+    "maturity": 3,
+    "url": "https://openrouter.ai"
+  },
+  {
+    "name": "DALL·E",
+    "category": "Creative AI",
+    "description": "OpenAI's AI image generation model — create original images, art, and designs from text descriptions with remarkable quality and creative control.",
+    "type": "Tool",
+    "useCase": "Creative",
+    "purpose": "Design & Visualization",
+    "personas": ["Designer", "Marketing", "Product Owner", "Educator"],
+    "maturity": 4,
+    "url": "https://openai.com/dall-e"
+  },
+  {
+    "name": "Stable Diffusion",
+    "category": "Creative AI",
+    "description": "Open-source AI image generation model — run locally for free, fine-tune on custom styles, and integrate into applications without API costs.",
+    "type": "Tool",
+    "useCase": "Creative",
+    "purpose": "Design & Visualization",
+    "personas": ["Designer", "Developer", "Researcher"],
+    "maturity": 4,
+    "url": "https://stability.ai"
   }
 ]

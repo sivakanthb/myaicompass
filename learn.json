@@ -383,5 +383,49 @@
     "duration": "8 hours",
     "topic": "AI for Enterprise",
     "free": true
+  },
+  {
+    "title": "MCP (Model Context Protocol) Documentation",
+    "provider": "Anthropic",
+    "description": "Official specification and guides for building MCP servers and clients — connect AI assistants to external tools, APIs, and data sources through a universal protocol.",
+    "url": "https://modelcontextprotocol.io",
+    "format": "Documentation",
+    "level": "Intermediate",
+    "duration": "3 hours",
+    "topic": "Building AI Apps",
+    "free": true
+  },
+  {
+    "title": "GitHub Copilot Documentation",
+    "provider": "GitHub",
+    "description": "Complete guide to GitHub Copilot — setup, chat, code review, custom instructions, agents, and MCP integration for AI-assisted development.",
+    "url": "https://docs.github.com/en/copilot",
+    "format": "Documentation",
+    "level": "Beginner",
+    "duration": "2 hours",
+    "topic": "Vibe Coding",
+    "free": true
+  },
+  {
+    "title": "Building AI Agents with LangGraph — DeepLearning.AI",
+    "provider": "DeepLearning.AI",
+    "description": "Build production-ready AI agents — state management, tool integration, human-in-the-loop, multi-agent systems, and deployment patterns.",
+    "url": "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/",
+    "format": "Short Course",
+    "level": "Intermediate",
+    "duration": "1.5 hours",
+    "topic": "AI Agents",
+    "free": true
+  },
+  {
+    "title": "Quantization Fundamentals with Hugging Face",
+    "provider": "DeepLearning.AI",
+    "description": "Learn model quantization techniques — reduce model size and run LLMs efficiently on consumer hardware without significant quality loss.",
+    "url": "https://www.deeplearning.ai/short-courses/quantization-fundamentals-with-hugging-face/",
+    "format": "Short Course",
+    "level": "Intermediate",
+    "duration": "1 hour",
+    "topic": "MLOps & Deployment",
+    "free": true
   }
 ]
